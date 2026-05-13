@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mark Ochieng Oduor | Software Engineer & Digital Operations</title>
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Network Background Canvas -->
+    <!-- ================= BACKGROUND ================= -->
+    <!-- Network Canvas for the interactive particle background -->
     <canvas id="network-canvas"></canvas>
 
-    <!-- Navigation -->
+    <!-- ================= NAVIGATION ================= -->
     <nav id="navbar">
         <div class="nav-logo">
             <i class="fas fa-code" style="color: var(--accent-blue); margin-right: 8px;"></i>Mark
@@ -21,6 +25,7 @@
         <ul class="nav-links">
             <li><a href="#hero" class="active">Home</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
@@ -28,94 +33,201 @@
         </ul>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- ================= HERO SECTION ================= -->
     <section id="hero" class="container">
         <div class="hero-grid">
             <div class="hero-text fade-in">
+                <!-- EDIT YOUR NAME HERE -->
                 <h2>Hi There, <br> I'm Mark <span class="text-orange">Oduor</span></h2>
+                
+                <!-- TYPING EFFECT: The text changes automatically via script.js -->
                 <h3 class="typing-container">I Am Into <span class="text-red typing-text"></span><span class="cursor">|</span></h3>
                 
-                <a href="./assets/docs/Mark_Oduor_CV.pdf" target="_blank" class="btn-dark">Download CV <i class="fas fa-download" style="margin-left: 8px;"></i></a>
+                <!-- EDIT YOUR CV PDF LINK HERE -->
+                <a href="./assets/docs/Mark_Oduor_CV.pdf" target="_blank" class="btn-dark">
+                    Download CV <i class="fas fa-download" style="margin-left: 8px;"></i>
+                </a>
                 
+                <!-- EDIT YOUR SOCIAL LINKS HERE -->
                 <div class="social-icons-row">
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
                     <a href="mailto:oduor.markochieng@gmail.com"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
             
             <div class="avatar-wrapper fade-in">
                 <div class="avatar-circle">
-                    <!-- IMPORTANT: Put your transparent photo in the assets/images folder! -->
-                    <img src="./assets/images/profile-pic.png" alt="Mark Oduor">
+                    <!-- EDIT YOUR PROFILE PICTURE HERE: Place image in assets/images/ -->
+                    <img src="./assets/images/profile-pic.png" alt="Mark Ochieng Oduor">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- ================= ABOUT & SUMMARY SECTION ================= -->
     <section id="about" class="container fade-in">
         <div class="section-header">
-            <h2>Professional <span class="text-blue">Summary</span></h2>
+            <h2>The <span class="text-blue">Architect</span></h2>
         </div>
-        <div class="white-panel summary-box">
-            <p>Results-driven Digital Operations professional with a strong foundation in ICT and a strategic focus on software development and systems architecture. Proven track record in scaling digital infrastructure for multi-branch retail operations, including e-commerce integration and automated loyalty systems. Currently transitioning into advanced software engineering to bridge the gap between complex business logic and robust technical solutions.</p>
+        
+        <!-- Bento Grid Layout for dynamic sizing -->
+        <div class="bento-grid">
+            
+            <!-- MAIN BIO (Takes up 8 columns out of 12) -->
+            <div class="bento-item span-8">
+                <h3 style="color: var(--accent-blue); margin-bottom: 1rem; font-size: 1.4rem;">Bridging Business Logic & Clean Code</h3>
+                <!-- EDIT YOUR IN-DEPTH SUMMARY HERE -->
+                <p style="margin-bottom: 1rem; font-size: 1.1rem; color: var(--text-dark);">
+                    I am a <strong>Digital Operations Manager</strong> and <strong>Software Engineering Candidate</strong> who transforms complex business requirements into high-performance digital infrastructure. My technical journey began in healthcare ICT, but my passion for scalable systems led me to pure software development and operations.
+                </p>
+                <p style="color: var(--text-muted); line-height: 1.8;">
+                    I specialize in deploying omnichannel solutions, automating data-flow architectures (like KPI tracking via Google Sheets/Excel APIs), and integrating robust payment gateways (Daraja/M-Pesa API). Recently, my strategies helped scale digital operations to a <strong>1,300% revenue target exceedance</strong>. I don't just write code—I build systems that generate measurable business growth.
+                </p>
+            </div>
+
+            <!-- GROWTH MINDSET (Takes up 4 columns out of 12) -->
+            <div class="bento-item span-4 growth-mindset-block">
+                <h3 style="margin-bottom: 1.5rem; font-size: 1.2rem;">Growth Mindset</h3>
+                
+                <!-- EDIT WEAKNESS TO STRENGTH HERE -->
+                <div style="margin-bottom: 1.5rem;">
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 5px;">Tendency</p>
+                    <p class="mindset-weakness"><i class="fas fa-search-minus"></i> Over-Optimization</p>
+                </div>
+                
+                <div class="transformation-arrow">
+                    <i class="fas fa-arrow-down"></i>
+                </div>
+                
+                <div>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 5px;">Strategic Conversion</p>
+                    <p class="mindset-strength"><i class="fas fa-rocket"></i> Zero-Layout-Shift UI & 99+ PageSpeed</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- ================= EDUCATION & CERTIFICATIONS (NEW) ================= -->
+    <section id="education" class="container fade-in">
+        <div class="section-header">
+            <h2>Academic <span class="text-orange">Foundation</span></h2>
+        </div>
+        
+        <div class="bento-grid">
+            <!-- DEGREE CARD -->
+            <div class="bento-item span-6" style="border-top: 4px solid var(--accent-blue);">
+                <i class="fas fa-university text-blue" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                <h3 style="margin-bottom: 0.5rem;">BSc Computer Science (Candidate)</h3>
+                <p style="color: var(--text-dark); font-weight: 500; margin-bottom: 1rem;">University of the People (UoPeople)</p>
+                <!-- EDIT DISTINCTIONS HERE -->
+                <p style="background: rgba(37, 99, 235, 0.1); color: var(--accent-blue); padding: 8px 12px; border-radius: 8px; font-size: 0.9rem; display: inline-block;">
+                    <i class="fas fa-award"></i> Awarded UoPeople Scholarship for Academic Excellence
+                </p>
+            </div>
+
+            <!-- DIPLOMA CARD -->
+            <div class="bento-item span-6" style="border-top: 4px solid var(--accent-orange);">
+                <i class="fas fa-graduation-cap text-orange" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                <h3 style="margin-bottom: 0.5rem;">Diploma in ICT</h3>
+                <p style="color: var(--text-dark); font-weight: 500; margin-bottom: 1rem;">Siaya National Polytechnic</p>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">
+                    Foundational training in hardware, networking, and software troubleshooting, providing a robust base for advanced system architecture.
+                </p>
+            </div>
+
+            <!-- BOOTCAMP / CERTS CARD (Spans full width) -->
+            <div class="bento-item span-12" style="display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 250px;">
+                    <h4 style="color: var(--text-dark); margin-bottom: 10px;"><i class="fas fa-shield-alt text-red"></i> Cyber Security Bootcamp</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">ICT Authority & GOMYCODE Scholarship</p>
+                </div>
+                <div style="flex: 1; min-width: 250px;">
+                    <h4 style="color: var(--text-dark); margin-bottom: 10px;"><i class="fas fa-video text-blue"></i> Video Editing Masterclass</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Alison (CapCut Certified)</p>
+                </div>
+                <div style="flex: 1; min-width: 250px;">
+                    <h4 style="color: var(--text-dark); margin-bottom: 10px;"><i class="fas fa-chart-line text-green"></i> Digital Marketing & E-com</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Professional Certificate (In-Progress)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SKILLS SECTION ================= -->
     <section id="skills" class="container fade-in">
         <div class="section-header">
-            <h2>Core <span class="text-orange">Skills</span></h2>
+            <h2>Core <span class="text-orange">Competencies</span></h2>
         </div>
         <div class="skills-grid">
+            <!-- EDIT SKILLS HERE -->
             <div class="skill-card white-panel">
                 <i class="fas fa-code text-blue"></i>
                 <h3>Technical Stack</h3>
-                <p>PHP, SQL, Python (In-Progress), Vercel, cPanel Administration.</p>
+                <p>PHP, SQL, Python, JavaScript, HTML/CSS, Vercel Deployments.</p>
             </div>
             <div class="skill-card white-panel">
-                <i class="fas fa-database text-red"></i>
-                <h3>Systems & Data</h3>
-                <p>Google Search Console, Advanced Excel/Google Sheets (KPI Tracking), Procurement Systems.</p>
+                <i class="fas fa-server text-red"></i>
+                <h3>Infrastructure</h3>
+                <p>cPanel Administration, Google Cloud Console, Web Hosting, Domain Management.</p>
             </div>
             <div class="skill-card white-panel">
-                <i class="fas fa-bullhorn text-orange"></i>
-                <h3>Digital Marketing</h3>
-                <p>Social Media Management, SEO Strategy, Content Creation (Canva, CapCut).</p>
+                <i class="fas fa-project-diagram text-orange"></i>
+                <h3>Data Architecture</h3>
+                <p>Daraja API Integration, Advanced Excel/Sheets KPI Data-flows.</p>
             </div>
             <div class="skill-card white-panel">
-                <i class="fas fa-network-wired text-blue"></i>
-                <h3>Operations</h3>
-                <p>Loyalty Wallet Integration, Branch Performance Monitoring, Infrastructure Mgmt.</p>
+                <i class="fas fa-bullseye text-blue"></i>
+                <h3>Digital Ops</h3>
+                <p>SEO Strategy, Social Media Scaling (30k+ followers), Tech Procurement.</p>
             </div>
         </div>
     </section>
 
-    <!-- Experience Timeline Section -->
+    <!-- ================= EXPERIENCE TIMELINE ================= -->
     <section id="experience" class="container fade-in">
         <div class="section-header">
             <h2>Professional <span class="text-red">Experience</span></h2>
         </div>
         <div class="timeline-wrapper">
-            <div class="timeline-node white-panel active" onclick="toggleTimeline(this)">
+            
+            <!-- EXPERIENCE 1 (Active by default) -->
+            <div class="timeline-node active" onclick="toggleTimeline(this)">
                 <div class="timeline-dot"></div>
                 <div class="timeline-header">
-                    <h3>Digital Operations & Marketing Mgr</h3>
+                    <h3>Digital Ops & Social Media Manager</h3>
+                    <!-- EDIT DATES HERE -->
                     <span>Dec 2024 – Present</span>
                     <p class="company">Powerstar Supermarkets – Nairobi</p>
                 </div>
+                <!-- EDIT BULLET POINTS HERE -->
                 <div class="timeline-content">
-                    <ul>
-                        <li><strong>Strategic Systems Management:</strong> Developed hierarchical permission structure for branch auditing across 5 branches.</li>
-                        <li><strong>Web Infrastructure:</strong> Built and maintain official company domain via Vercel and cPanel.</li>
-                        <li><strong>E-commerce & Loyalty:</strong> Leading integration of automated omnichannel loyalty wallet.</li>
+                    <ul style="margin-top: 1.5rem;">
+                        <li><strong>Revenue Scaling:</strong> Exceeded digital revenue targets by 1,300%, driving sales from a KES 100k baseline to <strong>KES 1.5M+</strong>.</li>
+                        <li><strong>Infrastructure Mgmt:</strong> Built, secured, and maintained the official company domain via Vercel and cPanel, utilizing Google Search Console for SEO optimization.</li>
+                        <li><strong>API Integration:</strong> Spearheaded the logic design for an automated omnichannel loyalty wallet and mobile application.</li>
+                        <li><strong>Data Systems:</strong> Developed a hierarchical data-flow architecture to automate KPI grading and payouts across 5 major branches (Naivasha, Joska, Kitengela, Kangari, Ruiru).</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="timeline-node white-panel" onclick="toggleTimeline(this)">
+            <!-- EXPERIENCE 2 -->
+            <div class="timeline-node" onclick="toggleTimeline(this)">
+                <div class="timeline-dot"></div>
+                <div class="timeline-header">
+                    <h3>Customer Service Representative</h3>
+                    <span>Oct 2024 – Dec 2024</span>
+                    <p class="company">Powerstar Supermarkets – Ruiru</p>
+                </div>
+                <div class="timeline-content">
+                    <ul style="margin-top: 1.5rem;">
+                        <li>Managed frontline customer inquiries and provided operational support during the company's transition to advanced digital systems.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- EXPERIENCE 3 -->
+            <div class="timeline-node" onclick="toggleTimeline(this)">
                 <div class="timeline-dot"></div>
                 <div class="timeline-header">
                     <h3>ICT Laboratory Technician (Attaché)</h3>
@@ -123,84 +235,122 @@
                     <p class="company">JOOUST – Siaya Campus</p>
                 </div>
                 <div class="timeline-content">
-                    <ul>
-                        <li>Maintained ICT lab records and provided technical hardware/software troubleshooting for student and staff systems.</li>
+                    <ul style="margin-top: 1.5rem;">
+                        <li>Maintained sensitive ICT lab records and provided direct technical hardware and software troubleshooting for university staff and student systems.</li>
                     </ul>
                 </div>
             </div>
+
         </div>
     </section>
 
-    <!-- Projects & Portfolio Section -->
+    <!-- ================= PROJECTS SECTION ================= -->
     <section id="projects" class="container fade-in">
         <div class="section-header">
-            <h2>Key <span class="text-blue">Projects</span></h2>
+            <h2>Key <span class="text-blue">Engineering Projects</span></h2>
         </div>
         <div class="projects-grid">
-            <!-- Project 1 -->
+            
+            <!-- PROJECT 1 -->
             <div class="project-card white-panel">
-                <!-- Example of linking to a project image or video -->
-                <img src="./assets/images/project-1.jpg" alt="Loyalty Wallet Project" class="project-image">
+                <!-- EDIT PROJECT IMAGE: Place in assets/images/ -->
+                <img src="./assets/images/project-1.jpg" alt="Automated Loyalty Wallet Interface" class="project-image">
                 <h3>Automated Loyalty Wallet</h3>
-                <p>Designed the logic for a mobile-integrated loyalty system to synchronize customer rewards across all retail branches.</p>
+                <p>Designed the backend logic for a mobile-integrated loyalty system to seamlessly synchronize customer rewards across all physical retail branches and e-commerce platforms.</p>
             </div>
-            <!-- Project 2 -->
+            
+            <!-- PROJECT 2 -->
             <div class="project-card white-panel">
-                <img src="./assets/images/project-2.jpg" alt="KPI Dashboard Project" class="project-image">
-                <h3>KPI Architecture</h3>
-                <p>Developed a data-flow architecture in Google Sheets/Excel to automate the grading and payout system for branch managers.</p>
+                <img src="./assets/images/project-2.jpg" alt="KPI Architecture Dashboard" class="project-image">
+                <h3>KPI Tracking Architecture</h3>
+                <p>Developed a complex data-flow architecture using advanced Google Sheets and Excel formulas to fully automate the grading and commission payout system for branch managers based on real-time metrics.</p>
             </div>
+
+            <!-- PROJECT 3 -->
+            <div class="project-card white-panel">
+                <img src="./assets/images/project-3.jpg" alt="Procurement Portal Wireframe" class="project-image">
+                <h3>Digital Procurement Portal</h3>
+                <p>Designed, developed, and deployed a specialized, secure tendering portal for digital procurement as an advanced academic web development project.</p>
+            </div>
+
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- ================= CONTACT SECTION ================= -->
     <section id="contact" class="container fade-in">
         <div class="section-header">
             <h2>Let's <span class="text-orange">Connect</span></h2>
         </div>
         <div class="contact-container">
             <div class="contact-info white-panel">
-                <h3>Contact Details</h3>
+                <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem;">Get In Touch</h3>
+                <!-- EDIT CONTACT DETAILS HERE -->
                 <p><i class="fas fa-map-marker-alt text-blue"></i> Nairobi, Kenya</p>
                 <p><i class="fas fa-phone text-blue"></i> <a href="tel:+254718178521">0718178521</a></p>
                 <p><i class="fas fa-envelope text-blue"></i> <a href="mailto:oduor.markochieng@gmail.com">oduor.markochieng@gmail.com</a></p>
+                
+                <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(0,0,0,0.05);">
+                    <p style="font-size: 0.95rem;">Looking for an engineer to scale your digital infrastructure? I am currently open to new software engineering and digital operations opportunities.</p>
+                </div>
             </div>
             
+            <!-- EDIT FORMSPREE ACTION URL HERE -->
+            <!-- Go to formspree.io, create a free form, and paste the URL below -->
             <form action="https://formspree.io/f/your-formspree-id" method="POST" class="white-panel contact-form">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="_replyto" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                <button type="submit" class="btn-dark">Send Message</button>
+                <input type="text" name="name" placeholder="Your Full Name" required>
+                <input type="email" name="_replyto" placeholder="Your Professional Email" required>
+                <textarea name="message" placeholder="How can I help scale your operations?" rows="6" required></textarea>
+                <button type="submit" class="btn-dark" style="margin-bottom: 0; width: 100%;">Send Message</button>
             </form>
         </div>
     </section>
 
-    <!-- Professional Footer -->
+    <!-- ================= POPUP TOAST (Conversion Tool) ================= -->
+    <!-- Triggered by script.js after scrolling down -->
+    <div id="toast-popup" class="toast-popup">
+        <div class="toast-header">
+            <h4>Ready to scale?</h4>
+            <button class="close-toast" onclick="document.getElementById('toast-popup').classList.remove('active')">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <p>I build revenue-generating digital systems. Let's discuss your next big technical project.</p>
+        <div class="toast-actions">
+            <a href="mailto:oduor.markochieng@gmail.com" class="toast-btn btn-solid">Email Me</a>
+            <a href="#contact" class="toast-btn btn-outline" onclick="document.getElementById('toast-popup').classList.remove('active')">Contact Form</a>
+        </div>
+    </div>
+
+    <!-- ================= FOOTER ================= -->
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-brand">
-                <h3><i class="fas fa-code"></i> Mark Oduor</h3>
+                <h3><i class="fas fa-code" style="color: var(--accent-blue);"></i> Mark Oduor</h3>
                 <p>Scaling digital infrastructure, integrating e-commerce solutions, and bridging the gap between business logic and robust technical architecture.</p>
             </div>
             <div class="footer-links">
-                <h4>Quick Links</h4>
+                <h4>Explore</h4>
                 <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#about">About My Strategy</a></li>
+                    <li><a href="#education">Education & Certs</a></li>
+                    <li><a href="#experience">Career Journey</a></li>
+                    <li><a href="#projects">Engineering Projects</a></li>
                 </ul>
             </div>
             <div class="footer-contact">
-                <h4>Contact Info</h4>
-                <p><i class="fas fa-phone"></i> 0718178521</p>
-                <p><i class="fas fa-envelope"></i> oduor.markochieng@gmail.com</p>
+                <h4>Direct Contact</h4>
+                <!-- EDIT FOOTER CONTACTS HERE -->
+                <p><i class="fas fa-phone text-orange"></i> 0718178521</p>
+                <p><i class="fas fa-envelope text-blue"></i> oduor.markochieng@gmail.com</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Mark Ochieng Oduor. All Rights Reserved.</p>
+            <!-- Automatically updates year if you use JS, but hardcoded for now -->
+            <p>&copy; 2026 Mark Ochieng Oduor. Built with clean code and high-performance architecture.</p>
         </div>
     </footer>
 
+    <!-- ================= JAVASCRIPT ================= -->
     <script src="script.js"></script>
 </body>
 </html>
