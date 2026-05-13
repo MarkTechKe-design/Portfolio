@@ -32,7 +32,7 @@
 }
 
 /* =========================================
-   2. RESET & BASE
+   2. RESET, BASE & CUSTOM SCROLLBAR
 ========================================= */
 * { 
     margin: 0; 
@@ -40,6 +40,12 @@
     box-sizing: border-box; 
     scroll-behavior: smooth; 
 }
+
+/* Premium Webkit Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-main); }
+::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
 
 body {
     background-color: var(--bg-main);
@@ -147,7 +153,6 @@ nav {
 .nav-links a:hover, .nav-links a.active { color: var(--text-dark); }
 .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
 
-/* Micro-interaction Download Button */
 .nav-btn-download {
     background: rgba(0, 102, 204, 0.1);
     color: var(--accent-blue) !important;
@@ -196,7 +201,6 @@ nav {
     box-shadow: var(--shadow-avatar);
 }
 
-/* Premium Avatar Circular Container */
 .avatar-wrapper { display: flex; justify-content: center; position: relative; }
 .avatar-circle {
     width: 420px; height: 420px;
@@ -212,32 +216,26 @@ nav {
 .avatar-circle:hover { transform: scale(1.02) rotate(2deg); }
 .avatar-circle img, .avatar-circle svg {
     width: 100%; height: 100%;
-    object-fit: cover; /* Dynamically scales without breaking aspect ratio */
+    object-fit: cover;
     object-position: center;
 }
 
-/* =========================================
-   6. GROWTH MINDSET & COMPETENCY MATRIX
-========================================= */
-.competency-bar-container {
-    width: 100%; background: #f1f5f9; border-radius: 50px; height: 8px; margin-top: 10px; overflow: hidden;
-}
-.competency-fill {
-    height: 100%; background: linear-gradient(90deg, var(--accent-blue), var(--accent-indigo));
-    border-radius: 50px; transition: width 1.5s ease-in-out;
-}
+.cursor { display: inline-block; width: 3px; background-color: var(--text-dark); animation: blink 1s infinite; }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
-/* Transformation Toggle UI */
-.growth-mindset-block {
-    background: var(--bg-panel); border: 1px solid rgba(0,0,0,0.05);
-    border-radius: var(--radius-lg); padding: 2rem;
-}
-.transformation-arrow {
-    display: flex; justify-content: center; align-items: center;
-    color: var(--accent-orange); font-size: 1.5rem; margin: 1rem 0;
-}
-.mindset-weakness { color: var(--accent-red); font-weight: 500;}
-.mindset-strength { color: var(--accent-green); font-weight: 600; padding: 10px; background: rgba(52, 199, 89, 0.1); border-radius: 8px;}
+/* =========================================
+   6. SKILLS & PROJECTS GRIDS (Added missing blocks)
+========================================= */
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+.skill-card { text-align: center; transition: var(--transition-smooth); padding: 2rem; border-radius: var(--radius-lg); }
+.skill-card i { font-size: 2.5rem; margin-bottom: 1rem; transition: var(--transition-bounce); }
+.skill-card:hover i { transform: scale(1.1); }
+.skill-card h3 { margin-bottom: 1rem; color: var(--text-dark); }
+.skill-card p { font-size: 0.9rem; color: var(--text-muted); }
+
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+.project-card { transition: var(--transition-smooth); display: flex; flex-direction: column; cursor: pointer; }
+.project-card:hover i.fa-mobile-alt, .project-card:hover i.fa-sitemap, .project-card:hover i.fa-shopping-cart { transform: scale(1.15); transition: var(--transition-smooth); }
 
 /* =========================================
    7. INTERACTIVE EXPERIENCE TIMELINE
@@ -270,7 +268,6 @@ nav {
 .timeline-header h3 { font-size: 1.4rem; color: var(--text-dark); margin-bottom: 0.5rem;}
 .timeline-header span { font-size: 0.9rem; color: var(--accent-indigo); float: right; font-weight: 600; background: rgba(94, 92, 230, 0.1); padding: 4px 12px; border-radius: 50px;}
 
-/* Expandable Slide-Out Panel */
 .timeline-content { 
     max-height: 0; overflow: hidden; padding: 0 2rem; opacity: 0; 
     transition: max-height 0.6s cubic-bezier(0.25, 1, 0.5, 1), padding 0.4s ease, opacity 0.4s ease; 
@@ -302,24 +299,15 @@ nav {
     box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
 }
 
-/* Elegant Real-Time Validation Architecture */
-.contact-form input:focus, .contact-form textarea:focus { 
-    outline: none; background: #fff;
-}
-.contact-form input:focus:valid, .contact-form textarea:focus:valid {
-    border-color: var(--accent-green);
-    box-shadow: 0 0 0 4px rgba(52, 199, 89, 0.15);
-}
-.contact-form input:focus:invalid:not(:placeholder-shown), .contact-form textarea:focus:invalid:not(:placeholder-shown) {
-    border-color: var(--accent-red);
-    box-shadow: 0 0 0 4px rgba(255, 59, 48, 0.15);
-}
+.contact-form input:focus, .contact-form textarea:focus { outline: none; background: #fff; }
+.contact-form input:focus:valid, .contact-form textarea:focus:valid { border-color: var(--accent-green); box-shadow: 0 0 0 4px rgba(52, 199, 89, 0.15); }
+.contact-form input:focus:invalid:not(:placeholder-shown), .contact-form textarea:focus:invalid:not(:placeholder-shown) { border-color: var(--accent-red); box-shadow: 0 0 0 4px rgba(255, 59, 48, 0.15); }
 
 /* =========================================
    9. ELEGANT CONVERSION TOAST POPUP
 ========================================= */
 .toast-popup {
-    position: fixed; bottom: 30px; right: -400px; /* Hidden off-screen initially */
+    position: fixed; bottom: 30px; right: -400px; 
     width: 360px;
     background: var(--glass-bg);
     backdrop-filter: saturate(180%) blur(25px);
@@ -331,7 +319,7 @@ nav {
     transition: right 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     z-index: 9999;
 }
-.toast-popup.active { right: 30px; } /* Toggled via JS */
+.toast-popup.active { right: 30px; } 
 
 .toast-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
 .toast-header h4 { font-size: 1.1rem; color: var(--text-dark); }
@@ -391,7 +379,7 @@ nav {
 }
 
 @media (max-width: 768px) {
-    .nav-links { display: none; } /* Trigger Hamburger Menu JS */
+    .nav-links { display: none; } 
     .contact-container, .footer-container { grid-template-columns: 1fr; }
     .avatar-circle { width: 320px; height: 320px; border-width: 6px;}
     .timeline-node { padding-left: 50px; }
