@@ -32,7 +32,7 @@ Setup & Installation
 Clone the repository:
 
 Bash
-git clone [https://github.com/yourusername/portfolio.git](https://github.com/yourusername/portfolio.git)
+git clone (https://github.com/MarkTechKe-design/Portfolio/)
 Add your assets:
 
 Place your profile photo in assets/images/profile-pic.png.
@@ -64,4 +64,3 @@ Built with 💻 and ☕ by Mark Ochieng Oduor.
 *   **Clear Instructions:** It tells anyone downloading the code exactly where to put their images and how to fix the form.
 *   **Professionalism:** It lists the "Tech Stack" and "Project Structure," which shows you have a disciplined engineering workflow.
 
-**Pro-Tip:** Once you upload this to **GitHub**, the README will automatically appear as a beautiful landing page for your code!
