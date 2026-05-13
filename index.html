@@ -35,7 +35,7 @@
                 <h2>Hi There, <br> I'm Mark <span class="text-orange">Oduor</span></h2>
                 <h3 class="typing-container">I Am Into <span class="text-red typing-text"></span><span class="cursor">|</span></h3>
                 
-                <a href="#about" class="btn-dark">About Me <i class="fas fa-arrow-down" style="margin-left: 8px;"></i></a>
+                <a href="./assets/docs/Mark_Oduor_CV.pdf" target="_blank" class="btn-dark">Download CV <i class="fas fa-download" style="margin-left: 8px;"></i></a>
                 
                 <div class="social-icons-row">
                     <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -47,14 +47,14 @@
             
             <div class="avatar-wrapper fade-in">
                 <div class="avatar-circle">
-                    <!-- Replace with your actual image with a transparent background -->
-                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Mark Oduor">
+                    <!-- IMPORTANT: Put your transparent photo in the assets/images folder! -->
+                    <img src="./assets/images/profile-pic.png" alt="Mark Oduor">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Professional Summary -->
+    <!-- About Section -->
     <section id="about" class="container fade-in">
         <div class="section-header">
             <h2>Professional <span class="text-blue">Summary</span></h2>
@@ -64,8 +64,117 @@
         </div>
     </section>
 
-    <!-- (Keep your Skills, Experience, and Projects sections here, just change class "glass-panel" to "white-panel" and "text-gradient" to "text-blue") -->
-    
+    <!-- Skills Section -->
+    <section id="skills" class="container fade-in">
+        <div class="section-header">
+            <h2>Core <span class="text-orange">Skills</span></h2>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-card white-panel">
+                <i class="fas fa-code text-blue"></i>
+                <h3>Technical Stack</h3>
+                <p>PHP, SQL, Python (In-Progress), Vercel, cPanel Administration.</p>
+            </div>
+            <div class="skill-card white-panel">
+                <i class="fas fa-database text-red"></i>
+                <h3>Systems & Data</h3>
+                <p>Google Search Console, Advanced Excel/Google Sheets (KPI Tracking), Procurement Systems.</p>
+            </div>
+            <div class="skill-card white-panel">
+                <i class="fas fa-bullhorn text-orange"></i>
+                <h3>Digital Marketing</h3>
+                <p>Social Media Management, SEO Strategy, Content Creation (Canva, CapCut).</p>
+            </div>
+            <div class="skill-card white-panel">
+                <i class="fas fa-network-wired text-blue"></i>
+                <h3>Operations</h3>
+                <p>Loyalty Wallet Integration, Branch Performance Monitoring, Infrastructure Mgmt.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline Section -->
+    <section id="experience" class="container fade-in">
+        <div class="section-header">
+            <h2>Professional <span class="text-red">Experience</span></h2>
+        </div>
+        <div class="timeline-wrapper">
+            <div class="timeline-node white-panel active" onclick="toggleTimeline(this)">
+                <div class="timeline-dot"></div>
+                <div class="timeline-header">
+                    <h3>Digital Operations & Marketing Mgr</h3>
+                    <span>Dec 2024 – Present</span>
+                    <p class="company">Powerstar Supermarkets – Nairobi</p>
+                </div>
+                <div class="timeline-content">
+                    <ul>
+                        <li><strong>Strategic Systems Management:</strong> Developed hierarchical permission structure for branch auditing across 5 branches.</li>
+                        <li><strong>Web Infrastructure:</strong> Built and maintain official company domain via Vercel and cPanel.</li>
+                        <li><strong>E-commerce & Loyalty:</strong> Leading integration of automated omnichannel loyalty wallet.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-node white-panel" onclick="toggleTimeline(this)">
+                <div class="timeline-dot"></div>
+                <div class="timeline-header">
+                    <h3>ICT Laboratory Technician (Attaché)</h3>
+                    <span>Sep 2023 – Dec 2023</span>
+                    <p class="company">JOOUST – Siaya Campus</p>
+                </div>
+                <div class="timeline-content">
+                    <ul>
+                        <li>Maintained ICT lab records and provided technical hardware/software troubleshooting for student and staff systems.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects & Portfolio Section -->
+    <section id="projects" class="container fade-in">
+        <div class="section-header">
+            <h2>Key <span class="text-blue">Projects</span></h2>
+        </div>
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card white-panel">
+                <!-- Example of linking to a project image or video -->
+                <img src="./assets/images/project-1.jpg" alt="Loyalty Wallet Project" class="project-image">
+                <h3>Automated Loyalty Wallet</h3>
+                <p>Designed the logic for a mobile-integrated loyalty system to synchronize customer rewards across all retail branches.</p>
+            </div>
+            <!-- Project 2 -->
+            <div class="project-card white-panel">
+                <img src="./assets/images/project-2.jpg" alt="KPI Dashboard Project" class="project-image">
+                <h3>KPI Architecture</h3>
+                <p>Developed a data-flow architecture in Google Sheets/Excel to automate the grading and payout system for branch managers.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container fade-in">
+        <div class="section-header">
+            <h2>Let's <span class="text-orange">Connect</span></h2>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info white-panel">
+                <h3>Contact Details</h3>
+                <p><i class="fas fa-map-marker-alt text-blue"></i> Nairobi, Kenya</p>
+                <p><i class="fas fa-phone text-blue"></i> <a href="tel:+254718178521">0718178521</a></p>
+                <p><i class="fas fa-envelope text-blue"></i> <a href="mailto:oduor.markochieng@gmail.com">oduor.markochieng@gmail.com</a></p>
+            </div>
+            
+            <form action="https://formspree.io/f/your-formspree-id" method="POST" class="white-panel contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="_replyto" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit" class="btn-dark">Send Message</button>
+            </form>
+        </div>
+    </section>
+
     <!-- Professional Footer -->
     <footer class="site-footer">
         <div class="footer-container">
@@ -85,7 +194,6 @@
                 <h4>Contact Info</h4>
                 <p><i class="fas fa-phone"></i> 0718178521</p>
                 <p><i class="fas fa-envelope"></i> oduor.markochieng@gmail.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
             </div>
         </div>
         <div class="footer-bottom">
