@@ -4,21 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mark Ochieng Oduor | Software Engineer & Digital Operations</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Poppins:wght@500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Network Background Canvas -->
+    <canvas id="network-canvas"></canvas>
+
     <!-- Navigation -->
     <nav id="navbar">
-        <div class="nav-logo">MO<span class="text-gradient">.</span></div>
+        <div class="nav-logo">
+            <i class="fas fa-code" style="color: var(--accent-blue); margin-right: 8px;"></i>Mark
+        </div>
         <ul class="nav-links">
-            <li><a href="#about">Summary</a></li>
+            <li><a href="#hero" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact" class="text-gradient">Contact</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
@@ -26,24 +32,23 @@
     <section id="hero" class="container">
         <div class="hero-grid">
             <div class="hero-text fade-in">
-                <p class="subtitle text-gradient">Nairobi, Kenya</p>
-                <h1>Mark Ochieng Oduor</h1>
-                <h2 class="role-title">Digital Operations Manager <br>& Software Engineering Candidate</h2>
-                <p>Scaling digital infrastructure, integrating e-commerce solutions, and bridging the gap between complex business logic and robust technical architecture.</p>
-                <div class="hero-actions">
-                    <a href="#projects" class="btn-primary">View Projects</a>
-                    <a href="#contact" class="btn-secondary">Hire Me</a>
+                <h2>Hi There, <br> I'm Mark <span class="text-orange">Oduor</span></h2>
+                <h3 class="typing-container">I Am Into <span class="text-red typing-text"></span><span class="cursor">|</span></h3>
+                
+                <a href="#about" class="btn-dark">About Me <i class="fas fa-arrow-down" style="margin-left: 8px;"></i></a>
+                
+                <div class="social-icons-row">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="mailto:oduor.markochieng@gmail.com"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
             
-            <div class="avatar-card-wrapper fade-in">
-                <div class="avatar-card glass-panel">
-                    <!-- Replace the URL below with your local image path (e.g., 'images/me.jpg') -->
-                    <div class="avatar-img" style="background-image: url('https://images.unsplash.com/photo-1549692520-acc6669e2f0c?q=80&w=600&auto=format&fit=crop');"></div>
-                    <div class="avatar-overlay">
-                        <h3>Mark Oduor</h3>
-                        <p class="text-gradient">Systems Architect</p>
-                    </div>
+            <div class="avatar-wrapper fade-in">
+                <div class="avatar-circle">
+                    <!-- Replace with your actual image with a transparent background -->
+                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Mark Oduor">
                 </div>
             </div>
         </div>
@@ -52,204 +57,41 @@
     <!-- Professional Summary -->
     <section id="about" class="container fade-in">
         <div class="section-header">
-            <h2>Professional <span class="text-gradient">Summary</span></h2>
+            <h2>Professional <span class="text-blue">Summary</span></h2>
         </div>
-        <div class="glass-panel summary-box">
+        <div class="white-panel summary-box">
             <p>Results-driven Digital Operations professional with a strong foundation in ICT and a strategic focus on software development and systems architecture. Proven track record in scaling digital infrastructure for multi-branch retail operations, including e-commerce integration and automated loyalty systems. Currently transitioning into advanced software engineering to bridge the gap between complex business logic and robust technical solutions.</p>
-            
-            <div class="strengths-grid">
-                <div class="strength-item">
-                    <i class="fas fa-comments text-gradient"></i>
-                    <h4>Technical Communication</h4>
-                    <p>Translating complex system architectures into actionable business insights.</p>
-                </div>
-                <div class="strength-item">
-                    <i class="fas fa-shield-alt text-gradient"></i>
-                    <h4>Ethical Leadership</h4>
-                    <p>Strong commitment to accountability and digital records integrity.</p>
-                </div>
-                <div class="strength-item">
-                    <i class="fas fa-sync text-gradient"></i>
-                    <h4>Adaptability</h4>
-                    <p>Proactively shifting to high-level technical engineering.</p>
-                </div>
-            </div>
         </div>
     </section>
 
-    <!-- Core Skills -->
-    <section id="skills" class="container fade-in">
-        <div class="section-header">
-            <h2>Core <span class="text-gradient">Skills</span></h2>
-        </div>
-        <div class="skills-grid">
-            <div class="skill-card glass-panel">
-                <i class="fas fa-code"></i>
-                <h3>Technical Stack</h3>
-                <p>PHP, SQL, Python (In-Progress), Vercel, cPanel Administration.</p>
+    <!-- (Keep your Skills, Experience, and Projects sections here, just change class "glass-panel" to "white-panel" and "text-gradient" to "text-blue") -->
+    
+    <!-- Professional Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3><i class="fas fa-code"></i> Mark Oduor</h3>
+                <p>Scaling digital infrastructure, integrating e-commerce solutions, and bridging the gap between business logic and robust technical architecture.</p>
             </div>
-            <div class="skill-card glass-panel">
-                <i class="fas fa-database"></i>
-                <h3>Systems & Data</h3>
-                <p>Google Search Console, Advanced Excel/Google Sheets (KPI Tracking), Procurement Systems.</p>
-            </div>
-            <div class="skill-card glass-panel">
-                <i class="fas fa-bullhorn"></i>
-                <h3>Digital Marketing</h3>
-                <p>Social Media Management, SEO Strategy, Content Creation (Canva, CapCut).</p>
-            </div>
-            <div class="skill-card glass-panel">
-                <i class="fas fa-network-wired"></i>
-                <h3>Operations</h3>
-                <p>Loyalty Wallet Integration, Branch Performance Monitoring, Infrastructure Mgmt.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Timeline -->
-    <section id="experience" class="container fade-in">
-        <div class="section-header">
-            <h2>Professional <span class="text-gradient">Experience</span></h2>
-        </div>
-        <div class="timeline-wrapper">
-            
-            <div class="timeline-node glass-panel active" onclick="toggleTimeline(this)">
-                <div class="timeline-dot"></div>
-                <div class="timeline-header">
-                    <h3>Digital Operations & Social Media Marketing Manager</h3>
-                    <span>Dec 2024 – Present</span>
-                    <p class="company">Powerstar Supermarkets – Nairobi</p>
-                </div>
-                <div class="timeline-content">
-                    <ul>
-                        <li><strong>Strategic Systems Management:</strong> Developed hierarchical permission structure for branch auditing and KPI systems across 5 major branches.</li>
-                        <li><strong>Web Infrastructure:</strong> Built and maintain official company domain via Vercel and cPanel; optimized with Google Search Console.</li>
-                        <li><strong>E-commerce & Loyalty:</strong> Leading integration of automated omnichannel loyalty wallet and mobile application for customer retention.</li>
-                        <li><strong>Marketing Leadership:</strong> Directing digital communication strategy and reporting on branch manager grading.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="timeline-node glass-panel" onclick="toggleTimeline(this)">
-                <div class="timeline-dot"></div>
-                <div class="timeline-header">
-                    <h3>Customer Service Representative</h3>
-                    <span>Oct 2024 – Dec 2024</span>
-                    <p class="company">Powerstar Supermarkets – Ruiru</p>
-                </div>
-                <div class="timeline-content">
-                    <ul>
-                        <li>Managed frontline customer inquiries and operational support during the transition to digital systems.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="timeline-node glass-panel" onclick="toggleTimeline(this)">
-                <div class="timeline-dot"></div>
-                <div class="timeline-header">
-                    <h3>ICT Laboratory Technician (Attaché)</h3>
-                    <span>Sep 2023 – Dec 2023</span>
-                    <p class="company">JOOUST – Siaya Campus</p>
-                </div>
-                <div class="timeline-content">
-                    <ul>
-                        <li>Maintained ICT lab records and provided technical hardware/software troubleshooting for student and staff systems.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Key Projects -->
-    <section id="projects" class="container fade-in">
-        <div class="section-header">
-            <h2>Key <span class="text-gradient">Projects</span></h2>
-        </div>
-        <div class="projects-grid">
-            <div class="project-card glass-panel">
-                <i class="fas fa-mobile-alt text-gradient project-icon"></i>
-                <h3>Automated Loyalty Wallet</h3>
-                <p>Designed the logic for a mobile-integrated loyalty system to synchronize customer rewards across all retail branches seamlessly.</p>
-            </div>
-            <div class="project-card glass-panel">
-                <i class="fas fa-chart-bar text-gradient project-icon"></i>
-                <h3>KPI Architecture</h3>
-                <p>Developed a data-flow architecture in Google Sheets/Excel to automate the grading and payout system for branch managers based on real-time KPIs.</p>
-            </div>
-            <div class="project-card glass-panel">
-                <i class="fas fa-shopping-cart text-gradient project-icon"></i>
-                <h3>Digital Procurement Portal</h3>
-                <p>Designed and submitted a specialized tendering portal for digital procurement as an advanced academic web development project.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education & Certifications -->
-    <section id="education" class="container fade-in">
-        <div class="about-grid">
-            <div class="glass-panel" style="padding: 2rem;">
-                <h3 style="margin-bottom: 1.5rem;"><i class="fas fa-graduation-cap text-gradient"></i> Education</h3>
-                <div class="edu-item">
-                    <h4>BSc in Computer Science (Candidate)</h4>
-                    <p>University of the People | Starting June 2026</p>
-                    <small>Awarded UoPeople Scholarship for academic excellence</small>
-                </div>
-                <div class="edu-item">
-                    <h4>Diploma in ICT</h4>
-                    <p>Siaya National Polytechnic</p>
-                </div>
-                <div class="edu-item">
-                    <h4>KCSE</h4>
-                    <p>Holy Trinity Mayingo Secondary School</p>
-                </div>
-            </div>
-            <div class="glass-panel" style="padding: 2rem;">
-                <h3 style="margin-bottom: 1.5rem;"><i class="fas fa-certificate text-gradient"></i> Certifications</h3>
-                <ul class="cert-list">
-                    <li><i class="fas fa-check-circle"></i> Cyber Security Bootcamp Scholarship (ICT Authority & GOMYCODE)</li>
-                    <li><i class="fas fa-check-circle"></i> Video Editing Masterclass - CapCut (Alison)</li>
-                    <li><i class="fas fa-spinner"></i> Digital Marketing & E-commerce Professional Certificate (In-Progress)</li>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
                 </ul>
             </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="container fade-in">
-        <div class="section-header">
-            <h2>Let's <span class="text-gradient">Connect</span></h2>
-        </div>
-        <div class="contact-container">
-            <div class="contact-info glass-panel">
-                <h3>Contact Details</h3>
-                <p><i class="fas fa-map-marker-alt text-gradient"></i> Nairobi, Kenya</p>
-                <p><i class="fas fa-phone text-gradient"></i> <a href="tel:+254718178521">0718178521</a></p>
-                <p><i class="fas fa-envelope text-gradient"></i> <a href="mailto:oduor.markochieng@gmail.com">oduor.markochieng@gmail.com</a></p>
-                <div class="social-links mt-2">
-                    <!-- Replace '#' with your actual profile links -->
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
-                </div>
+            <div class="footer-contact">
+                <h4>Contact Info</h4>
+                <p><i class="fas fa-phone"></i> 0718178521</p>
+                <p><i class="fas fa-envelope"></i> oduor.markochieng@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
             </div>
-            <!-- Formspree integration for functional emails -->
-            <form action="https://formspree.io/f/your-formspree-id" method="POST" class="glass-panel contact-form">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="_replyto" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                <button type="submit" class="btn-primary">Send Message</button>
-            </form>
         </div>
-    </section>
-
-    <!-- Exit Intent Toast -->
-    <div id="conversionToast" class="conversion-toast glass-panel">
-        <div class="toast-header">
-            <h4 class="text-gradient">Need an Operations Engineer?</h4>
-            <button class="close-toast" onclick="closeToast()"><i class="fas fa-times"></i></button>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Mark Ochieng Oduor. All Rights Reserved.</p>
         </div>
-        <p>I'm looking for roles bridging technical architecture with business scaling.</p>
-        <a href="mailto:oduor.markochieng@gmail.com" class="btn-primary" style="width: 100%; justify-content: center; margin-top: 10px;">Email Me Now</a>
-    </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
