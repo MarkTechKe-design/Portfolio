@@ -3,645 +3,254 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mark Oduor | Digital & UI/UX Architect</title>
-    <!-- Google Fonts: Inter for readability, Poppins for bold impact -->
+    <title>Mark Ochieng Oduor | Software Engineer & Digital Operations</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Poppins:wght@500;700;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome for robust icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        /* =========================================
-           1. CSS VARIABLES & DESIGN SYSTEM
-        ========================================= */
-        :root {
-            --bg-deep: #0f172a;        /* Slate 900 */
-            --bg-surface: #1e293b;     /* Slate 800 */
-            --text-main: #f8fafc;      /* Slate 50 */
-            --text-muted: #94a3b8;     /* Slate 400 */
-            --neon-cyan: #06b6d4;      /* Electric Cyan */
-            --neon-violet: #8b5cf6;    /* Electric Violet */
-            --glass-bg: rgba(30, 41, 59, 0.7);
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        /* =========================================
-           2. RESET & BASE TYPOGRAPHY
-        ========================================= */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--bg-deep);
-            color: var(--text-main);
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, .nav-logo {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        /* Utility Classes */
-        .text-gradient {
-            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-violet));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .glass-panel {
-            background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 100px 0;
-        }
-
-        /* =========================================
-           3. NAVIGATION
-        ========================================= */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 20px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            transition: var(--transition-smooth);
-        }
-
-        nav.scrolled {
-            background: rgba(15, 23, 42, 0.9);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--glass-border);
-            padding: 15px 5%;
-        }
-
-        .nav-logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            letter-spacing: -1px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-main);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: var(--transition-smooth);
-        }
-
-        .nav-links a:hover {
-            color: var(--neon-cyan);
-        }
-
-        /* =========================================
-           4. HERO SECTION
-        ========================================= */
-        #hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 80px;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .hero-text h1 {
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-text p {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-bottom: 2.5rem;
-            max-width: 500px;
-        }
-
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 15px 30px;
-            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-violet));
-            color: #fff;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-family: 'Poppins', sans-serif;
-            transition: var(--transition-smooth);
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 10px 30px -10px rgba(6, 182, 212, 0.5);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px -10px rgba(139, 92, 246, 0.6);
-        }
-
-        /* 3D Glassmorphism Avatar Card */
-        .avatar-card-wrapper {
-            perspective: 1000px;
-        }
-
-        .avatar-card {
-            width: 100%;
-            max-width: 400px;
-            aspect-ratio: 4/5;
-            margin: 0 auto;
-            position: relative;
-            border-radius: 24px;
-            overflow: hidden;
-            transform-style: preserve-3d;
-            transition: transform 0.6s ease;
-        }
-
-        .avatar-card:hover {
-            transform: rotateY(-5deg) rotateX(5deg);
-        }
-
-        /* Fallback Unsplash Image Placeholder */
-        .avatar-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            /* Replace the URL below with your local path e.g., 'images/me.jpg' later */
-            background-image: url('https://images.unsplash.com/photo-1549692520-acc6669e2f0c?q=80&w=600&auto=format&fit=crop'); 
-            background-size: cover;
-            background-position: center;
-        }
-
-        .avatar-overlay {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            padding: 2rem;
-            background: linear-gradient(to top, rgba(15,23,42,1), transparent);
-        }
-
-        /* =========================================
-           5. ABOUT & GROWTH MATRIX
-        ========================================= */
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 4rem;
-        }
-
-        .matrix-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-
-        .matrix-card {
-            padding: 2rem;
-            transition: var(--transition-smooth);
-        }
-
-        .matrix-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--neon-violet);
-        }
-
-        .matrix-card i {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: var(--neon-cyan);
-        }
-
-        .matrix-card h3 {
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
-
-        /* =========================================
-           6. INTERACTIVE EXPERIENCE TIMELINE
-        ========================================= */
-        .timeline-wrapper {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .timeline-wrapper::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 20px;
-            height: 100%;
-            width: 2px;
-            background: var(--glass-border);
-        }
-
-        .timeline-node {
-            position: relative;
-            padding-left: 60px;
-            margin-bottom: 2rem;
-            cursor: pointer;
-        }
-
-        .timeline-dot {
-            position: absolute;
-            left: 14px;
-            top: 5px;
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            background: var(--bg-deep);
-            border: 2px solid var(--neon-cyan);
-            transition: var(--transition-smooth);
-            z-index: 2;
-        }
-
-        .timeline-node:hover .timeline-dot,
-        .timeline-node.active .timeline-dot {
-            background: var(--neon-cyan);
-            box-shadow: 0 0 15px var(--neon-cyan);
-        }
-
-        .timeline-header {
-            padding: 1.5rem;
-            transition: var(--transition-smooth);
-        }
-
-        .timeline-header h3 {
-            font-size: 1.3rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .timeline-header span {
-            font-size: 0.9rem;
-            color: var(--neon-violet);
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-        }
-
-        /* Accordion Expansion */
-        .timeline-content {
-            max-height: 0;
-            overflow: hidden;
-            padding: 0 1.5rem;
-            transition: max-height 0.5s ease-out, padding 0.5s ease;
-            opacity: 0;
-        }
-
-        .timeline-node.active .timeline-content {
-            max-height: 500px; /* Arbitrary large number for CSS transition */
-            padding: 0 1.5rem 1.5rem 1.5rem;
-            opacity: 1;
-        }
-
-        .achievement-list {
-            margin-top: 1rem;
-            padding-left: 1.2rem;
-            color: var(--text-muted);
-        }
-
-        .achievement-list li {
-            margin-bottom: 0.5rem;
-        }
-
-        .achievement-list strong {
-            color: var(--text-main);
-        }
-
-        /* =========================================
-           7. CONVERSION POPUP (Toast)
-        ========================================= */
-        .conversion-toast {
-            position: fixed;
-            bottom: 30px;
-            right: -100%; /* Hidden by default */
-            max-width: 350px;
-            z-index: 2000;
-            padding: 1.5rem;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            transition: right 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .conversion-toast.show {
-            right: 30px;
-        }
-
-        .toast-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-
-        .close-toast {
-            background: none;
-            border: none;
-            color: var(--text-muted);
-            cursor: pointer;
-            font-size: 1.2rem;
-        }
-
-        .close-toast:hover {
-            color: white;
-        }
-
-        /* =========================================
-           8. RESPONSIVE DESIGN (Mobile)
-        ========================================= */
-        @media (max-width: 768px) {
-            .hero-grid, .about-grid {
-                grid-template-columns: 1fr;
-            }
-            .hero-text {
-                text-align: center;
-            }
-            .hero-text h1 {
-                font-size: 2.8rem;
-            }
-            .hero-text p {
-                margin: 0 auto 2.5rem auto;
-            }
-            .conversion-toast.show {
-                right: 5%;
-                width: 90%;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- NAVIGATION -->
+    <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-logo">MO<span class="text-gradient">.</span></div>
         <ul class="nav-links">
-            <li><a href="#about">About</a></li>
+            <li><a href="#about">Summary</a></li>
+            <li><a href="#skills">Skills</a></li>
             <li><a href="#experience">Experience</a></li>
-            <li><a href="#contact" class="text-gradient">Hire Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact" class="text-gradient">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- HERO SECTION -->
+    <!-- Hero Section -->
     <section id="hero" class="container">
         <div class="hero-grid">
             <div class="hero-text fade-in">
-                <h1>Architecting <span class="text-gradient">Digital Growth</span> & UI</h1>
-                <p>Hi, I'm Mark. A Principal Frontend Engineer & Systems Architect transitioning from healthcare ICT to high-performance software development. I build fast, scalable, revenue-generating web applications.</p>
-                <a href="#contact" class="btn-primary">
-                    Let's Build Together <i class="fas fa-arrow-right"></i>
-                </a>
+                <p class="subtitle text-gradient">Nairobi, Kenya</p>
+                <h1>Mark Ochieng Oduor</h1>
+                <h2 class="role-title">Digital Operations Manager <br>& Software Engineering Candidate</h2>
+                <p>Scaling digital infrastructure, integrating e-commerce solutions, and bridging the gap between complex business logic and robust technical architecture.</p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn-primary">View Projects</a>
+                    <a href="#contact" class="btn-secondary">Hire Me</a>
+                </div>
             </div>
             
-            <div class="avatar-card-wrapper fade-in" style="transition-delay: 0.2s;">
+            <div class="avatar-card-wrapper fade-in">
                 <div class="avatar-card glass-panel">
-                    <!-- Placeholder Fallback Image -->
-                    <div class="avatar-img"></div>
+                    <!-- Replace the URL below with your local image path (e.g., 'images/me.jpg') -->
+                    <div class="avatar-img" style="background-image: url('https://images.unsplash.com/photo-1549692520-acc6669e2f0c?q=80&w=600&auto=format&fit=crop');"></div>
                     <div class="avatar-overlay">
                         <h3>Mark Oduor</h3>
-                        <p class="text-gradient">UI/UX & Frontend Architect</p>
+                        <p class="text-gradient">Systems Architect</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- DEEP-DIVE ABOUT ME & GROWTH MATRIX -->
-    <section id="about" class="container">
-        <div class="section-header fade-in">
-            <h2>The <span class="text-gradient">Growth</span> Architect</h2>
-            <p style="color: var(--text-muted)">Education, Competencies & Psychological Mindset.</p>
+    <!-- Professional Summary -->
+    <section id="about" class="container fade-in">
+        <div class="section-header">
+            <h2>Professional <span class="text-gradient">Summary</span></h2>
         </div>
-
-        <div class="about-grid fade-in">
-            <div class="about-text glass-panel" style="padding: 2rem;">
-                <h3 style="margin-bottom: 1rem;"><i class="fas fa-graduation-cap" style="color: var(--neon-cyan)"></i> Journey & Education</h3>
-                <p style="color: var(--text-muted); margin-bottom: 1rem;">
-                    Armed with a Diploma in ICT from Siaya National Polytechnic, my professional journey has been defined by a pivot from patient-focused healthcare tech to pure code architecture.
-                </p>
-                <p style="color: var(--text-muted);">
-                    I specialize in full-stack integrations (like Daraja API) and front-end optimization. I don't just write HTML; I build systems that generate measurable business revenue.
-                </p>
-            </div>
-
-            <!-- Core Competencies -->
-            <div class="competencies-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                <div class="glass-panel" style="padding: 1.5rem;">
-                    <i class="fas fa-code" style="color: var(--neon-cyan); margin-bottom: 10px; font-size: 1.5rem;"></i>
-                    <h4>Frontend Dev</h4>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">React, Next.js, HTML/CSS/JS, UI/UX.</p>
-                </div>
-                <div class="glass-panel" style="padding: 1.5rem;">
-                    <i class="fas fa-server" style="color: var(--neon-violet); margin-bottom: 10px; font-size: 1.5rem;"></i>
-                    <h4>Cloud & Infrastructure</h4>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">Vercel, cPanel, Google Cloud Console.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- The Unique Growth Matrix -->
-        <h3 style="margin-top: 4rem; text-align: center;">The Growth Matrix</h3>
-        <div class="matrix-container fade-in">
-            <div class="matrix-card glass-panel">
-                <i class="fas fa-search-plus"></i>
-                <h3>Curiosity (Hobby)</h3>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">Researching computer hardware specs and mobile architecture.</p>
-                <div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--glass-border);">
-                    <span style="color: var(--neon-cyan); font-size: 0.8rem; font-weight: bold;">STRATEGIC CONVERSION:</span>
-                    <p style="font-size: 0.8rem; color: #fff;">Allows me to optimize web applications for specific hardware constraints globally.</p>
-                </div>
-            </div>
-
-            <div class="matrix-card glass-panel">
-                <i class="fas fa-exclamation-triangle"></i>
-                <h3>Over-Optimization (Weakness)</h3>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">A tendency to obsess over perfect CSS architecture before launch.</p>
-                <div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--glass-border);">
-                    <span style="color: var(--neon-violet); font-size: 0.8rem; font-weight: bold;">STRATEGIC CONVERSION:</span>
-                    <p style="font-size: 0.8rem; color: #fff;">Results in zero-layout-shift UI/UX and 99+ Google PageSpeed scores.</p>
-                </div>
-            </div>
+        <div class="glass-panel summary-box">
+            <p>Results-driven Digital Operations professional with a strong foundation in ICT and a strategic focus on software development and systems architecture. Proven track record in scaling digital infrastructure for multi-branch retail operations, including e-commerce integration and automated loyalty systems. Currently transitioning into advanced software engineering to bridge the gap between complex business logic and robust technical solutions.</p>
             
-            <div class="matrix-card glass-panel">
-                <i class="fas fa-chart-line"></i>
-                <h3>Business Logic (Strength)</h3>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">Translating code directly to KPI growth and automated sales.</p>
-                <div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--glass-border);">
-                    <span style="color: var(--neon-cyan); font-size: 0.8rem; font-weight: bold;">STRATEGIC CONVERSION:</span>
-                    <p style="font-size: 0.8rem; color: #fff;">Bridges the gap between engineering teams and executive stakeholders.</p>
+            <div class="strengths-grid">
+                <div class="strength-item">
+                    <i class="fas fa-comments text-gradient"></i>
+                    <h4>Technical Communication</h4>
+                    <p>Translating complex system architectures into actionable business insights.</p>
+                </div>
+                <div class="strength-item">
+                    <i class="fas fa-shield-alt text-gradient"></i>
+                    <h4>Ethical Leadership</h4>
+                    <p>Strong commitment to accountability and digital records integrity.</p>
+                </div>
+                <div class="strength-item">
+                    <i class="fas fa-sync text-gradient"></i>
+                    <h4>Adaptability</h4>
+                    <p>Proactively shifting to high-level technical engineering.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- INTERACTIVE EXPERIENCE TIMELINE -->
-    <section id="experience" class="container">
-        <div class="section-header fade-in">
-            <h2>Engineering <span class="text-gradient">Impact</span></h2>
-            <p style="color: var(--text-muted)">Quantified results and interactive technical deep-dives.</p>
+    <!-- Core Skills -->
+    <section id="skills" class="container fade-in">
+        <div class="section-header">
+            <h2>Core <span class="text-gradient">Skills</span></h2>
         </div>
+        <div class="skills-grid">
+            <div class="skill-card glass-panel">
+                <i class="fas fa-code"></i>
+                <h3>Technical Stack</h3>
+                <p>PHP, SQL, Python (In-Progress), Vercel, cPanel Administration.</p>
+            </div>
+            <div class="skill-card glass-panel">
+                <i class="fas fa-database"></i>
+                <h3>Systems & Data</h3>
+                <p>Google Search Console, Advanced Excel/Google Sheets (KPI Tracking), Procurement Systems.</p>
+            </div>
+            <div class="skill-card glass-panel">
+                <i class="fas fa-bullhorn"></i>
+                <h3>Digital Marketing</h3>
+                <p>Social Media Management, SEO Strategy, Content Creation (Canva, CapCut).</p>
+            </div>
+            <div class="skill-card glass-panel">
+                <i class="fas fa-network-wired"></i>
+                <h3>Operations</h3>
+                <p>Loyalty Wallet Integration, Branch Performance Monitoring, Infrastructure Mgmt.</p>
+            </div>
+        </div>
+    </section>
 
+    <!-- Experience Timeline -->
+    <section id="experience" class="container fade-in">
+        <div class="section-header">
+            <h2>Professional <span class="text-gradient">Experience</span></h2>
+        </div>
         <div class="timeline-wrapper">
-            <!-- Timeline Item 1 -->
-            <div class="timeline-node glass-panel fade-in" onclick="toggleTimeline(this)">
+            
+            <div class="timeline-node glass-panel active" onclick="toggleTimeline(this)">
                 <div class="timeline-dot"></div>
                 <div class="timeline-header">
-                    <h3>Revenue Architect / Social Media Mgr <span>2026 - Present</span></h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem;">Powerstar Supermarkets</p>
+                    <h3>Digital Operations & Social Media Marketing Manager</h3>
+                    <span>Dec 2024 – Present</span>
+                    <p class="company">Powerstar Supermarkets – Nairobi</p>
                 </div>
                 <div class="timeline-content">
-                    <ul class="achievement-list">
-                        <li><strong>1,300% Target Exceedance:</strong> Scaled digital revenue from a KES 100k baseline to <strong>KES 1.5M+</strong> by deploying data-driven marketing and UI pipelines.</li>
-                        <li><strong>Infrastructure Management:</strong> Actively managed Vercel deployments, powerstarsupermarkets.co.ke domain integrity, and Google Search Console indexing.</li>
-                        <li><strong>API Integration:</strong> Engineered the digital workflow incorporating e-commerce solutions with local mobile payment APIs (Daraja/M-Pesa).</li>
+                    <ul>
+                        <li><strong>Strategic Systems Management:</strong> Developed hierarchical permission structure for branch auditing and KPI systems across 5 major branches.</li>
+                        <li><strong>Web Infrastructure:</strong> Built and maintain official company domain via Vercel and cPanel; optimized with Google Search Console.</li>
+                        <li><strong>E-commerce & Loyalty:</strong> Leading integration of automated omnichannel loyalty wallet and mobile application for customer retention.</li>
+                        <li><strong>Marketing Leadership:</strong> Directing digital communication strategy and reporting on branch manager grading.</li>
                     </ul>
-                    <a href="#" class="btn-primary" style="margin-top: 1rem; padding: 10px 20px; font-size: 0.8rem;">View Architecture Details</a>
                 </div>
             </div>
 
-            <!-- Timeline Item 2 -->
-            <div class="timeline-node glass-panel fade-in" onclick="toggleTimeline(this)">
+            <div class="timeline-node glass-panel" onclick="toggleTimeline(this)">
                 <div class="timeline-dot"></div>
                 <div class="timeline-header">
-                    <h3>Independent Frontend Engineer <span>2024 - 2025</span></h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem;">Freelance & Academic Projects</p>
+                    <h3>Customer Service Representative</h3>
+                    <span>Oct 2024 – Dec 2024</span>
+                    <p class="company">Powerstar Supermarkets – Ruiru</p>
                 </div>
                 <div class="timeline-content">
-                    <ul class="achievement-list">
-                        <li><strong>Cyber Security Foundation:</strong> Completed a Cyber Security Bootcamp under the ICT Authority / GOMYCODE scholarship (Dec 2024).</li>
-                        <li><strong>Procurement Portal Dev:</strong> Developed a digital procurement and tendering portal academic project (Oct 2025) focusing on secure data transmission.</li>
-                        <li><strong>Continuous Upskilling:</strong> System design and software development through freeCodeCamp.</li>
+                    <ul>
+                        <li>Managed frontline customer inquiries and operational support during the transition to digital systems.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-node glass-panel" onclick="toggleTimeline(this)">
+                <div class="timeline-dot"></div>
+                <div class="timeline-header">
+                    <h3>ICT Laboratory Technician (Attaché)</h3>
+                    <span>Sep 2023 – Dec 2023</span>
+                    <p class="company">JOOUST – Siaya Campus</p>
+                </div>
+                <div class="timeline-content">
+                    <ul>
+                        <li>Maintained ICT lab records and provided technical hardware/software troubleshooting for student and staff systems.</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- EXIT INTENT / SCROLL POPUP (The Conversion Engine) -->
+    <!-- Key Projects -->
+    <section id="projects" class="container fade-in">
+        <div class="section-header">
+            <h2>Key <span class="text-gradient">Projects</span></h2>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card glass-panel">
+                <i class="fas fa-mobile-alt text-gradient project-icon"></i>
+                <h3>Automated Loyalty Wallet</h3>
+                <p>Designed the logic for a mobile-integrated loyalty system to synchronize customer rewards across all retail branches seamlessly.</p>
+            </div>
+            <div class="project-card glass-panel">
+                <i class="fas fa-chart-bar text-gradient project-icon"></i>
+                <h3>KPI Architecture</h3>
+                <p>Developed a data-flow architecture in Google Sheets/Excel to automate the grading and payout system for branch managers based on real-time KPIs.</p>
+            </div>
+            <div class="project-card glass-panel">
+                <i class="fas fa-shopping-cart text-gradient project-icon"></i>
+                <h3>Digital Procurement Portal</h3>
+                <p>Designed and submitted a specialized tendering portal for digital procurement as an advanced academic web development project.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Certifications -->
+    <section id="education" class="container fade-in">
+        <div class="about-grid">
+            <div class="glass-panel" style="padding: 2rem;">
+                <h3 style="margin-bottom: 1.5rem;"><i class="fas fa-graduation-cap text-gradient"></i> Education</h3>
+                <div class="edu-item">
+                    <h4>BSc in Computer Science (Candidate)</h4>
+                    <p>University of the People | Starting June 2026</p>
+                    <small>Awarded UoPeople Scholarship for academic excellence</small>
+                </div>
+                <div class="edu-item">
+                    <h4>Diploma in ICT</h4>
+                    <p>Siaya National Polytechnic</p>
+                </div>
+                <div class="edu-item">
+                    <h4>KCSE</h4>
+                    <p>Holy Trinity Mayingo Secondary School</p>
+                </div>
+            </div>
+            <div class="glass-panel" style="padding: 2rem;">
+                <h3 style="margin-bottom: 1.5rem;"><i class="fas fa-certificate text-gradient"></i> Certifications</h3>
+                <ul class="cert-list">
+                    <li><i class="fas fa-check-circle"></i> Cyber Security Bootcamp Scholarship (ICT Authority & GOMYCODE)</li>
+                    <li><i class="fas fa-check-circle"></i> Video Editing Masterclass - CapCut (Alison)</li>
+                    <li><i class="fas fa-spinner"></i> Digital Marketing & E-commerce Professional Certificate (In-Progress)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container fade-in">
+        <div class="section-header">
+            <h2>Let's <span class="text-gradient">Connect</span></h2>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info glass-panel">
+                <h3>Contact Details</h3>
+                <p><i class="fas fa-map-marker-alt text-gradient"></i> Nairobi, Kenya</p>
+                <p><i class="fas fa-phone text-gradient"></i> <a href="tel:+254718178521">0718178521</a></p>
+                <p><i class="fas fa-envelope text-gradient"></i> <a href="mailto:oduor.markochieng@gmail.com">oduor.markochieng@gmail.com</a></p>
+                <div class="social-links mt-2">
+                    <!-- Replace '#' with your actual profile links -->
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <!-- Formspree integration for functional emails -->
+            <form action="https://formspree.io/f/your-formspree-id" method="POST" class="glass-panel contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="_replyto" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit" class="btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Exit Intent Toast -->
     <div id="conversionToast" class="conversion-toast glass-panel">
         <div class="toast-header">
-            <h4 class="text-gradient">Need a High-Impact Dev?</h4>
+            <h4 class="text-gradient">Need an Operations Engineer?</h4>
             <button class="close-toast" onclick="closeToast()"><i class="fas fa-times"></i></button>
         </div>
-        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
-            I'm currently looking for opportunities where my blend of technical architecture and business logic can scale your revenue.
-        </p>
-        <a href="mailto:oduor.markochieng@gmail.com" class="btn-primary" style="width: 100%; justify-content: center;">Email Me Now</a>
+        <p>I'm looking for roles bridging technical architecture with business scaling.</p>
+        <a href="mailto:oduor.markochieng@gmail.com" class="btn-primary" style="width: 100%; justify-content: center; margin-top: 10px;">Email Me Now</a>
     </div>
 
-    <!-- JAVASCRIPT LOGIC -->
-    <script>
-        // 1. Sticky Nav Blur Effect
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        });
-
-        // 2. Interactive Timeline Accordion Logic
-        function toggleTimeline(element) {
-            // Check if currently active
-            const isActive = element.classList.contains('active');
-            
-            // Close all nodes first
-            document.querySelectorAll('.timeline-node').forEach(node => {
-                node.classList.remove('active');
-            });
-
-            // If it wasn't active before, open it
-            if (!isActive) {
-                element.classList.add('active');
-            }
-        }
-
-        // 3. Scroll Animations (Intersection Observer)
-        const fadeElements = document.querySelectorAll('.fade-in');
-        const appearOptions = {
-            threshold: 0.15,
-            rootMargin: "0px 0px -50px 0px"
-        };
-
-        const appearOnScroll = new IntersectionObserver(function(entries, observer) {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) {
-                    return;
-                } else {
-                    entry.target.style.opacity = 1;
-                    entry.target.style.transform = "translateY(0)";
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, appearOptions);
-
-        // Setup initial state for CSS animation
-        fadeElements.forEach(el => {
-            el.style.opacity = 0;
-            el.style.transform = "translateY(30px)";
-            el.style.transition = "opacity 0.6s ease-out, transform 0.6s ease-out";
-            appearOnScroll.observe(el);
-        });
-
-        // 4. Scroll-Triggered Conversion Popup
-        let popupTriggered = false;
-        const toast = document.getElementById('conversionToast');
-
-        window.addEventListener('scroll', () => {
-            if (popupTriggered) return;
-
-            // Calculate how far down the user has scrolled
-            const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-            
-            // Trigger popup at 60% scroll depth
-            if (scrollPercentage > 60) {
-                toast.classList.add('show');
-                popupTriggered = true; // Ensure it only fires once per session
-            }
-        });
-
-        function closeToast() {
-            toast.classList.remove('show');
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
