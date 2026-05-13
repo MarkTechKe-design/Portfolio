@@ -52,14 +52,13 @@
                     </div>
                 </div>
                 
-                <div class="avatar-wrapper fade-in">
-                    <!-- Solid Yellow Avatar to match your reference -->
-                    <div class="avatar-circle">
-                        <i class="fas fa-user-astronaut" style="font-size: 8rem; color: #fff; position: absolute; z-index: 1;"></i>
-                        <img src="./assets/images/profile-pic.png" alt="Mark Ochieng Oduor" onerror="this.style.display='none'">
-                    </div>
-                </div>
-            </div>
+                <div class="avatar-circle">
+    <!-- Added absolute centering so the icon stays perfectly in the middle -->
+    <i class="fas fa-user-astronaut" style="font-size: 8rem; color: #ffffff; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1;"></i>
+    
+    <!-- Your actual image will still align to the bottom naturally -->
+    <img src="./assets/images/profile-pic.png" alt="Mark Oduor" onerror="this.style.display='none'" style="position: relative; z-index: 2;">
+</div>
         </section>
 
         <!-- About Section -->
