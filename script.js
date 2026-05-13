@@ -30,14 +30,14 @@ document.addEventListener("DOMContentLoaded", () => {
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(148, 163, 184, 0.3)'; 
+                ctx.fillStyle = 'rgba(100, 116, 139, 0.4)'; 
                 ctx.fill();
             }
         }
 
         function initParticles() {
             particles = [];
-            let numberOfParticles = (width * height) / 15000;
+            let numberOfParticles = (width * height) / 12000;
             for (let i = 0; i < numberOfParticles; i++) particles.push(new Particle());
         }
 
@@ -51,10 +51,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     const dy = particles[i].y - particles[j].y;
                     const distance = Math.sqrt(dx * dx + dy * dy);
                     
-                    if (distance < 120) {
+                    if (distance < 130) {
                         ctx.beginPath();
-                        ctx.strokeStyle = `rgba(148, 163, 184, ${0.12 - distance/1000})`;
-                        ctx.lineWidth = 1;
+                        ctx.strokeStyle = `rgba(100, 116, 139, ${0.15 - distance/1000})`;
+                        ctx.lineWidth = 0.8;
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(particles[j].x, particles[j].y);
                         ctx.stroke();
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const cursorSpan = document.querySelector(".cursor");
     
     if (typedTextSpan && cursorSpan) {
-        const textArray = ["Data Integrations.", "System Architecture.", "Frontend Engineering."];
+        const textArray = ["Web Development.", "Data Integrations.", "System Architecture.", "Digital Operations."];
         const typingDelay = 100, erasingDelay = 50, newTextDelay = 2000;
         let textArrayIndex = 0, charIndex = 0;
 
@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* =========================================
-       3. SCROLL REVEAL ANIMATIONS (Intersection Observer)
+       3. SCROLL REVEAL ANIMATIONS 
     ========================================= */
     const fadeElements = document.querySelectorAll('.fade-in');
     fadeElements.forEach(el => {
@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.addEventListener('scroll', () => {
         if (navbar) {
-            navbar.style.boxShadow = window.scrollY > 50 ? "0 10px 30px rgba(0,0,0,0.05)" : "none";
+            navbar.style.boxShadow = window.scrollY > 50 ? "0 4px 20px rgba(0,0,0,0.05)" : "none";
         }
 
         let current = '';
@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     /* =========================================
-       5. INTERACTIVE TIMELINE (Event Delegation)
+       5. INTERACTIVE TIMELINE 
     ========================================= */
     const timelineNodes = document.querySelectorAll('.timeline-node');
     timelineNodes.forEach(node => {
@@ -194,4 +194,36 @@ document.addEventListener("DOMContentLoaded", () => {
     const yearSpan = document.getElementById('current-year');
     if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 
+    /* =========================================
+       8. PORTFOLIO FILTERING (NEW!)
+    ========================================= */
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+    if (filterBtns.length > 0 && portfolioItems.length > 0) {
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                
+                // 1. Remove active class from all buttons, add to clicked
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // 2. Get the filter category
+                const filterValue = btn.getAttribute('data-filter');
+
+                // 3. Loop through items and filter
+                portfolioItems.forEach(item => {
+                    const itemCategory = item.getAttribute('data-category');
+                    
+                    if (filterValue === 'all' || filterValue === itemCategory) {
+                        item.classList.remove('hide');
+                        item.style.animation = 'fadeInScale 0.5s ease forwards';
+                    } else {
+                        item.classList.add('hide');
+                        item.style.animation = 'none';
+                    }
+                });
+            });
+        });
+    }
 });
