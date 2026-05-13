@@ -33,7 +33,7 @@
     </nav>
 
     <main>
-        <!-- Hero Section -->
+        <!-- ================= HERO SECTION ================= -->
         <section id="hero" class="container">
             <div class="hero-grid">
                 <div class="hero-text fade-in">
@@ -52,16 +52,17 @@
                     </div>
                 </div>
                 
-                <div class="avatar-circle">
-    <!-- Added absolute centering so the icon stays perfectly in the middle -->
-    <i class="fas fa-user-astronaut" style="font-size: 8rem; color: #ffffff; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1;"></i>
-    
-    <!-- Your actual image will still align to the bottom naturally -->
-    <img src="./assets/images/profile-pic.png" alt="Mark Oduor" onerror="this.style.display='none'" style="position: relative; z-index: 2;">
-</div>
+                <div class="avatar-wrapper fade-in">
+                    <!-- Cleaned Avatar with Perfect Centered Fallback -->
+                    <div class="avatar-circle">
+                        <i class="fas fa-user-astronaut" style="font-size: 8rem; color: #ffffff; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1;"></i>
+                        <img src="./assets/images/profile-pic.png" alt="Mark Oduor" onerror="this.style.display='none'" style="position: relative; z-index: 2; width: 100%; height: 100%; object-fit: cover; object-position: bottom;">
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <!-- About Section -->
+        <!-- ================= ABOUT SECTION ================= -->
         <section id="about" class="container fade-in">
             <div class="section-header">
                 <h2>The <span class="text-blue">Architect</span></h2>
@@ -95,49 +96,52 @@
                     <div>
                         <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 5px;">Strategic Conversion</p>
                         <p style="color: #059669; font-weight: 600; padding: 10px; background: #ecfdf5; border-radius: 8px;">
-                            <i class="fas fa-microchip"></i> Highly Optimized Web Apps tailored for local device constraints.
+                            <i class="fas fa-microchip"></i> Highly Optimized Web Apps tailored for local constraints.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Education Section -->
+        <!-- ================= EDUCATION SECTION ================= -->
         <section id="education" class="container fade-in">
             <div class="section-header">
                 <h2>Academic <span class="text-orange">Foundation</span></h2>
             </div>
             
             <div class="bento-grid">
-                <div class="bento-item span-6" style="border-top: 4px solid var(--accent-blue);">
+                
+                <!-- Degree (Span 4 for a perfect 3-column row) -->
+                <div class="bento-item span-4" style="border-top: 4px solid var(--accent-blue);">
                     <i class="fas fa-university text-blue" style="font-size: 2rem; margin-bottom: 1rem;"></i>
                     <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">BSc Computer Science (Candidate)</h3>
-                    <p style="color: var(--text-muted); font-weight: 500; margin-bottom: 1rem;">University of the People (UoPeople)</p>
+                    <p style="color: var(--text-muted); font-weight: 500; margin-bottom: 1rem;">University of the People</p>
                     <p style="background: rgba(37, 99, 235, 0.1); color: var(--accent-blue); padding: 8px 12px; border-radius: 8px; font-size: 0.85rem; display: inline-block; font-weight: 600;">
-                        <i class="fas fa-award"></i> Awarded UoPeople Scholarship for Academic Excellence
+                        <i class="fas fa-award"></i> Scholarship for Academic Excellence
                     </p>
                 </div>
 
-                <div class="bento-item span-6" style="border-top: 4px solid var(--accent-orange);">
+                <!-- Diploma (Span 4) -->
+                <div class="bento-item span-4" style="border-top: 4px solid var(--accent-orange);">
                     <i class="fas fa-network-wired text-orange" style="font-size: 2rem; margin-bottom: 1rem;"></i>
                     <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Diploma in ICT</h3>
                     <p style="color: var(--text-muted); font-weight: 500; margin-bottom: 1rem;">Siaya National Polytechnic</p>
                     <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
-                        Comprehensive training in hardware networking, system diagnostics, and software troubleshooting, providing a baseline for cloud architecture.
+                        Training in networking, system diagnostics, and troubleshooting, providing a baseline for cloud architecture.
                     </p>
                 </div>
 
-<div class="bento-grid">
-    <div class="bento-item span-6" style="border-top: 4px solid var(--accent-blue);">
-        <i class="fas fa-university text-blue" style="font-size: 2rem; margin-bottom: 1rem;"></i>
-        <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Certificate in Orthopaedic Trauma Medicine</h3>
-        <p style="color: var(--text-muted); font-weight: 500; margin-bottom: 1rem;">KMTC - Makindu Campus</p>
-        <p style="background: rgba(37, 99, 235, 0.1); color: var(--accent-blue); padding: 8px 12px; border-radius: 8px; font-size: 0.85rem; display: inline-block; font-weight: 600;">
-            <i class="fas fa-award"></i> Professional certification in trauma medicine
-        </p>
-    </div>
-</div>
-                    
+                <!-- Certificate (Span 4) -->
+                <div class="bento-item span-4" style="border-top: 4px solid var(--accent-red);">
+                    <i class="fas fa-star-of-life text-red" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                    <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Certificate in Orthopaedic Trauma Medicine</h3>
+                    <p style="color: var(--text-muted); font-weight: 500; margin-bottom: 1rem;">KMTC - Makindu Campus</p>
+                    <p style="background: rgba(217, 4, 41, 0.1); color: var(--accent-red); padding: 8px 12px; border-radius: 8px; font-size: 0.85rem; display: inline-block; font-weight: 600;">
+                        <i class="fas fa-award"></i> Professional Medical Certification
+                    </p>
+                </div>
+
+                <!-- Certifications Strip (Span 12) -->
                 <div class="bento-item span-12" style="display: flex; gap: 2rem; flex-wrap: wrap; align-items: flex-start;">
                     <div style="flex: 1; min-width: 250px;">
                         <h4 style="margin-bottom: 10px; font-size: 1.1rem;"><i class="fas fa-shield-alt text-red"></i> Cyber Security Bootcamp</h4>
@@ -148,14 +152,14 @@
                         <p style="color: var(--text-muted); font-size: 0.9rem;"><strong>CapCut Certified</strong> via Alison. Expertise in high-conversion marketing, scaling channels to 30,000+ followers.</p>
                     </div>
                     <div style="flex: 1; min-width: 250px;">
-                        <h4 style="margin-bottom: 10px; font-size: 1.1rem;"><i class="fas fa-chart-line" style="color: #059669;"></i> Digital Marketing</h4>
+                        <h4 style="margin-bottom: 10px; font-size: 1.1rem;"><i class="fas fa-chart-line text-green"></i> Digital Marketing</h4>
                         <p style="color: var(--text-muted); font-size: 0.9rem;">Professional Certificate (In-Progress). Focused on omnichannel strategies and Daraja POS integration.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Skills Section -->
+        <!-- ================= SKILLS SECTION ================= -->
         <section id="skills" class="container fade-in">
             <div class="section-header">
                 <h2>Core <span class="text-orange">Competencies</span></h2>
@@ -184,7 +188,7 @@
             </div>
         </section>
 
-        <!-- Experience Timeline -->
+        <!-- ================= EXPERIENCE TIMELINE ================= -->
         <section id="experience" class="container fade-in">
             <div class="section-header">
                 <h2>Professional <span class="text-red">Experience</span></h2>
@@ -238,13 +242,12 @@
             </div>
         </section>
 
-        <!-- ================= PORTFOLIO / PROJECTS GALLERY (NEW) ================= -->
+        <!-- ================= PORTFOLIO / PROJECTS GALLERY ================= -->
         <section id="projects" class="container fade-in">
             <div class="section-header">
                 <h2>My <span class="text-blue">Portfolio</span></h2>
             </div>
             
-            <!-- Dynamic Filter Menu -->
             <div class="portfolio-filters">
                 <button class="filter-btn active" data-filter="all">All</button>
                 <button class="filter-btn" data-filter="web-dev">Web development</button>
@@ -254,8 +257,7 @@
 
             <div class="projects-grid">
                 
-                <!-- Card 1: Web Development -->
-                <div class="project-card white-panel portfolio-item" data-category="web-dev">
+                <div class="project-card white-panel portfolio-item" data-category="web-dev" style="padding: 0; overflow: hidden;">
                     <div class="portfolio-img-wrapper">
                         <i class="fas fa-laptop-code fallback-icon"></i>
                         <img src="./assets/images/project-1.jpg" alt="Automated Loyalty Wallet" onerror="this.style.display='none'">
@@ -266,8 +268,7 @@
                     </div>
                 </div>
                 
-                <!-- Card 2: Data Systems -->
-                <div class="project-card white-panel portfolio-item" data-category="data">
+                <div class="project-card white-panel portfolio-item" data-category="data" style="padding: 0; overflow: hidden;">
                     <div class="portfolio-img-wrapper">
                         <i class="fas fa-sitemap fallback-icon"></i>
                         <img src="./assets/images/project-2.jpg" alt="KPI Architecture" onerror="this.style.display='none'">
@@ -278,8 +279,7 @@
                     </div>
                 </div>
 
-                <!-- Card 3: Web Development -->
-                <div class="project-card white-panel portfolio-item" data-category="web-dev">
+                <div class="project-card white-panel portfolio-item" data-category="web-dev" style="padding: 0; overflow: hidden;">
                     <div class="portfolio-img-wrapper">
                         <i class="fas fa-shopping-cart fallback-icon"></i>
                         <img src="./assets/images/project-3.jpg" alt="Procurement Portal" onerror="this.style.display='none'">
@@ -290,8 +290,7 @@
                     </div>
                 </div>
 
-                <!-- Card 4: Applications -->
-                <div class="project-card white-panel portfolio-item" data-category="applications">
+                <div class="project-card white-panel portfolio-item" data-category="applications" style="padding: 0; overflow: hidden;">
                     <div class="portfolio-img-wrapper">
                         <i class="fas fa-mobile-alt fallback-icon"></i>
                         <img src="./assets/images/project-4.jpg" alt="Mobile App UI" onerror="this.style.display='none'">
@@ -302,8 +301,7 @@
                     </div>
                 </div>
 
-                <!-- Card 5: Data Systems -->
-                <div class="project-card white-panel portfolio-item" data-category="data">
+                <div class="project-card white-panel portfolio-item" data-category="data" style="padding: 0; overflow: hidden;">
                     <div class="portfolio-img-wrapper">
                         <i class="fas fa-database fallback-icon"></i>
                         <img src="./assets/images/project-5.jpg" alt="Data Flow System" onerror="this.style.display='none'">
@@ -314,8 +312,7 @@
                     </div>
                 </div>
 
-                <!-- Card 6: Applications -->
-                <div class="project-card white-panel portfolio-item" data-category="applications">
+                <div class="project-card white-panel portfolio-item" data-category="applications" style="padding: 0; overflow: hidden;">
                     <div class="portfolio-img-wrapper">
                         <i class="fas fa-desktop fallback-icon"></i>
                         <img src="./assets/images/project-6.jpg" alt="Dashboard UI" onerror="this.style.display='none'">
@@ -329,7 +326,7 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
+        <!-- ================= CONTACT SECTION ================= -->
         <section id="contact" class="container fade-in">
             <div class="section-header">
                 <h2>Let's <span class="text-orange">Connect</span></h2>
