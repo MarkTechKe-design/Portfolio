@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const cursorSpan = document.querySelector(".cursor");
     
     if (typedTextSpan && cursorSpan) {
-        const textArray = ["Web Development.", "Data Integrations.", "System Architecture.", "Digital Operations."];
+        const textArray = ["Web Development.", "Data Integrations.", "System Architecture.", "Full-Stack Operations."];
         const typingDelay = 100, erasingDelay = 50, newTextDelay = 2000;
         let textArrayIndex = 0, charIndex = 0;
 
@@ -195,7 +195,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 
     /* =========================================
-       8. PORTFOLIO FILTERING (NEW!)
+       8. PORTFOLIO FILTERING
     ========================================= */
     const filterBtns = document.querySelectorAll('.filter-btn');
     const portfolioItems = document.querySelectorAll('.portfolio-item');
@@ -204,19 +204,19 @@ document.addEventListener("DOMContentLoaded", () => {
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 
-                // 1. Remove active class from all buttons, add to clicked
+                // Remove active class from all buttons, add to clicked
                 filterBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
 
-                // 2. Get the filter category
                 const filterValue = btn.getAttribute('data-filter');
 
-                // 3. Loop through items and filter
                 portfolioItems.forEach(item => {
                     const itemCategory = item.getAttribute('data-category');
                     
                     if (filterValue === 'all' || filterValue === itemCategory) {
                         item.classList.remove('hide');
+                        // Force a reflow so the CSS animation restarts every time
+                        void item.offsetWidth;
                         item.style.animation = 'fadeInScale 0.5s ease forwards';
                     } else {
                         item.classList.add('hide');
