@@ -3,20 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mark Ochieng Oduor | Systems Architect & Digital Engineer</title>
-    <!-- Google Fonts -->
+    <title>Mark Ochieng Oduor | Digital Engineer & Social Media Strategist</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;700;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional Inline Styles for New Elements to Ensure Beautiful Rendering */
+        .hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; margin: 1.5rem 0; }
+        .btn-outline-custom { border: 2px solid #1A1A1A; padding: 12px 24px; border-radius: 8px; font-weight: 600; color: #1A1A1A; transition: all 0.3s ease; text-decoration: none; display: inline-flex; align-items: center; }
+        .btn-outline-custom:hover { background: #1A1A1A; color: #fff; }
+        .achievement-list { list-style: none; padding: 0; margin-top: 15px; }
+        .achievement-list li { margin-bottom: 12px; font-size: 0.95rem; line-height: 1.5; color: #444; display: flex; align-items: flex-start; gap: 10px; }
+        .achievement-list li i { margin-top: 4px; }
+        .badge-ready { display: inline-block; background: #e8f5e9; color: #006838; padding: 5px 12px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; margin-top: 15px; border: 1px solid #006838; }
+        .portfolio-item { position: relative; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: 0.3s; background: #fff; }
+        .portfolio-item:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .portfolio-img-wrapper { height: 200px; background: #f8f9fa; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .portfolio-img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .portfolio-item:hover .portfolio-img-wrapper img { transform: scale(1.05); }
+        .portfolio-info { padding: 20px; }
+        .text-green { color: #006838; }
+    </style>
 </head>
 <body>
 
-    <!-- Interactive Background -->
     <canvas id="network-canvas"></canvas>
 
-    <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-logo">
             <i class="fas fa-code text-blue" style="margin-right: 8px;"></i>Mark
@@ -27,23 +39,28 @@
             <li><a href="#education">Education</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#experience">Experience</a></li>
+            <li><a href="#achievements">Achievements</a></li>
             <li><a href="#projects">Portfolio</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <main>
-        <!-- ================= HERO SECTION ================= -->
         <section id="hero" class="container">
             <div class="hero-grid">
                 <div class="hero-text fade-in">
                     <h2>Hi There, <br> I'm Mark <span class="text-orange">Oduor</span></h2>
                     
-                    <h3 class="typing-container">I Am Into <span class="text-red typing-text"></span><span class="cursor">|</span></h3>
+                    <h3 class="typing-container">I Am Into <span class="text-red typing-text">Web Management, ICT & Social Media</span><span class="cursor">|</span></h3>
                     
-                    <a href="./assets/docs/Mark_Oduor_CV.pdf" target="_blank" class="btn-dark">
-                        Download CV <i class="fas fa-download" style="margin-left: 8px;"></i>
-                    </a>
+                    <div class="hero-buttons">
+                        <a href="./assets/docs/Mark_Oduor_CV.pdf" target="_blank" class="btn-dark">
+                            Download CV <i class="fas fa-download" style="margin-left: 8px;"></i>
+                        </a>
+                        <a href="./assets/docs/Mark_Oduor_Portfolio.pdf" target="_blank" class="btn-outline-custom">
+                            View My Portfolio <i class="fas fa-external-link-alt" style="margin-left: 8px;"></i>
+                        </a>
+                    </div>
                     
                     <div class="social-icons-row">
                         <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
@@ -53,40 +70,36 @@
                 </div>
                 
                 <div class="avatar-wrapper fade-in">
-                    <!-- Cleaned Avatar with Perfect Centered Fallback -->
                     <div class="avatar-circle">
-                        <i class="fas fa-user-astronaut" style="font-size: 8rem; color: #ffffff; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1;"></i>
+                        <i class="fas fa-laptop-code" style="font-size: 8rem; color: #ffffff; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1;"></i>
                         <img src="./assets/images/profile-pic.png" alt="Mark Oduor" onerror="this.style.display='none'" style="position: relative; z-index: 2; width: 100%; height: 100%; object-fit: cover; object-position: bottom;">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ================= ABOUT SECTION ================= -->
         <section id="about" class="container fade-in">
             <div class="section-header">
                 <h2>The <span class="text-blue">Architect</span></h2>
             </div>
             
             <div class="bento-grid">
-                <!-- Main Bio -->
                 <div class="bento-item span-8">
-                    <h3 style="color: var(--accent-blue); margin-bottom: 1rem; font-size: 1.4rem;">Bridging Business Logic & Clean Code</h3>
+                    <h3 style="color: var(--accent-blue); margin-bottom: 1rem; font-size: 1.4rem;">Bridging Customer Experience & Clean Code</h3>
                     <p style="margin-bottom: 1rem; font-size: 1.1rem; color: var(--text-dark);">
-                        I am a <strong>Digital Operations Manager</strong> and <strong>Systems Architect</strong> transforming complex business requirements into high-performance digital infrastructure. My journey represents a deliberate pivot from healthcare ICT to pure software architecture.
+                        I am a versatile <strong>Web Manager, Social Media Strategist, and ICT Professional</strong>. My journey represents a deliberate and passionate transition from the medical field into the dynamic world of technology and digital communications.
                     </p>
                     <p style="color: var(--text-muted); line-height: 1.8;">
-                        I specialize in full-stack integrations, managing Vercel and cPanel deployments, and architecting data-flow systems. By bridging the gap between engineering and stakeholders, I've automated omnichannel loyalty wallets and integrated local payment gateways (Daraja/M-Pesa API) to drive over <strong>KES 1.5 Million in monthly digital revenue</strong>.
+                        Today, I specialize in crafting engaging online presences, resolving complex IT infrastructure issues, and delivering top-tier customer service. Whether I am architecting a website's frontend, designing viral Canva portfolios, or managing customer relations, I bring analytical precision and creative problem-solving to every digital touchpoint.
                     </p>
                 </div>
 
-                <!-- Growth Mindset -->
                 <div class="bento-item span-4 growth-mindset-block">
-                    <h3 style="margin-bottom: 1.5rem; font-size: 1.2rem;">Growth Mindset</h3>
+                    <h3 style="margin-bottom: 1.5rem; font-size: 1.2rem;">My Evolution</h3>
                     
                     <div style="margin-bottom: 1.5rem;">
-                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 5px;">Tendency</p>
-                        <p style="color: var(--accent-red); font-weight: 500;"><i class="fas fa-search-minus"></i> Hardware Obsession</p>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 5px;">Foundation</p>
+                        <p style="color: var(--accent-red); font-weight: 500;"><i class="fas fa-user-md"></i> Healthcare & Patient Care</p>
                     </div>
                     
                     <div style="color: var(--accent-orange); font-size: 1.5rem; margin: 1rem 0; text-align: center;">
@@ -94,16 +107,15 @@
                     </div>
                     
                     <div>
-                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 5px;">Strategic Conversion</p>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 5px;">Current Focus</p>
                         <p style="color: #059669; font-weight: 600; padding: 10px; background: #ecfdf5; border-radius: 8px;">
-                            <i class="fas fa-microchip"></i> Highly Optimized Web Apps tailored for local constraints.
+                            <i class="fas fa-laptop-code"></i> Web, ICT & Digital Marketing
                         </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ================= EDUCATION SECTION ================= -->
         <section id="education" class="container fade-in">
             <div class="section-header">
                 <h2>Academic <span class="text-orange">Foundation</span></h2>
@@ -111,84 +123,89 @@
             
             <div class="bento-grid">
                 
-                <!-- Degree (Span 4 for a perfect 3-column row) -->
                 <div class="bento-item span-4" style="border-top: 4px solid var(--accent-blue);">
                     <i class="fas fa-university text-blue" style="font-size: 2rem; margin-bottom: 1rem;"></i>
-                    <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">BSc Computer Science (Candidate)</h3>
-                    <p style="color: var(--text-muted); font-weight: 500; margin-bottom: 1rem;">University of the People</p>
+                    <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Bachelor of Science in Computer Science</h3>
+                    <p style="color: var(--text-muted); font-weight: 500; margin-bottom: 1rem;">University of the People (USA)</p>
                     <p style="background: rgba(37, 99, 235, 0.1); color: var(--accent-blue); padding: 8px 12px; border-radius: 8px; font-size: 0.85rem; display: inline-block; font-weight: 600;">
-                        <i class="fas fa-award"></i> Scholarship for Academic Excellence
+                        <i class="fas fa-laptop-code"></i> Current Undergraduate Student
                     </p>
                 </div>
 
-                <!-- Diploma (Span 4) -->
                 <div class="bento-item span-4" style="border-top: 4px solid var(--accent-orange);">
                     <i class="fas fa-network-wired text-orange" style="font-size: 2rem; margin-bottom: 1rem;"></i>
-                    <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Diploma in ICT</h3>
+                    <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Diploma in Information & Communication Technology</h3>
                     <p style="color: var(--text-muted); font-weight: 500; margin-bottom: 1rem;">Siaya National Polytechnic</p>
-                    <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
-                        Training in networking, system diagnostics, and troubleshooting, providing a baseline for cloud architecture.
+                    <p style="background: rgba(245, 158, 11, 0.1); color: var(--accent-orange); padding: 8px 12px; border-radius: 8px; font-size: 0.85rem; display: inline-block; font-weight: 600;">
+                        <i class="fas fa-star"></i> Passed with Distinction
                     </p>
                 </div>
 
-                <!-- Certificate (Span 4) -->
                 <div class="bento-item span-4" style="border-top: 4px solid var(--accent-red);">
-                    <i class="fas fa-star-of-life text-red" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                    <i class="fas fa-graduation-cap text-red" style="font-size: 2rem; margin-bottom: 1rem;"></i>
                     <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Certificate in Orthopaedic Trauma Medicine</h3>
-                    <p style="color: var(--text-muted); font-weight: 500; margin-bottom: 1rem;">KMTC - Makindu Campus</p>
+                    <p style="color: var(--text-muted); font-weight: 500; margin-bottom: 1rem;">KMTC - Medical School</p>
                     <p style="background: rgba(217, 4, 41, 0.1); color: var(--accent-red); padding: 8px 12px; border-radius: 8px; font-size: 0.85rem; display: inline-block; font-weight: 600;">
-                        <i class="fas fa-award"></i> Professional Medical Certification
+                        <i class="fas fa-check-circle"></i> Graduated successfully before transitioning to Tech.
                     </p>
                 </div>
 
-                <!-- Certifications Strip (Span 12) -->
-                <div class="bento-item span-12" style="display: flex; gap: 2rem; flex-wrap: wrap; align-items: flex-start;">
-                    <div style="flex: 1; min-width: 250px;">
-                        <h4 style="margin-bottom: 10px; font-size: 1.1rem;"><i class="fas fa-shield-alt text-red"></i> Cyber Security Bootcamp</h4>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">Secured a competitive scholarship via <strong>ICT Authority & GOMYCODE</strong>, specializing in data protection (Dec 2024).</p>
-                    </div>
-                    <div style="flex: 1; min-width: 250px;">
-                        <h4 style="margin-bottom: 10px; font-size: 1.1rem;"><i class="fas fa-video text-blue"></i> Video Editing Masterclass</h4>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;"><strong>CapCut Certified</strong> via Alison. Expertise in high-conversion marketing, scaling channels to 30,000+ followers.</p>
-                    </div>
-                    <div style="flex: 1; min-width: 250px;">
-                        <h4 style="margin-bottom: 10px; font-size: 1.1rem;"><i class="fas fa-chart-line text-green"></i> Digital Marketing</h4>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">Professional Certificate (In-Progress). Focused on omnichannel strategies and Daraja POS integration.</p>
-                    </div>
-                </div>
             </div>
         </section>
 
-        <!-- ================= SKILLS SECTION ================= -->
         <section id="skills" class="container fade-in">
             <div class="section-header">
-                <h2>Core <span class="text-orange">Competencies</span></h2>
+                <h2>Core <span class="text-blue">Competencies</span></h2>
             </div>
             <div class="skills-grid">
+                
                 <div class="skill-card white-panel">
-                    <i class="fas fa-code text-blue"></i>
-                    <h3>Technical Stack</h3>
-                    <p>PHP, SQL, Python, JavaScript, HTML/CSS, Next.js, API Integration.</p>
+                    <i class="fas fa-globe text-blue" style="font-size: 2.5rem; margin-bottom: 15px;"></i>
+                    <h3>Website Management</h3>
+                    <ul class="achievement-list" style="margin-top: 10px;">
+                        <li><i class="fas fa-check text-blue"></i> HTML, CSS, JavaScript integration</li>
+                        <li><i class="fas fa-check text-blue"></i> E-commerce platform maintenance</li>
+                        <li><i class="fas fa-check text-blue"></i> UI/UX optimization & frontend updates</li>
+                        <li><i class="fas fa-check text-blue"></i> Content Management Systems (CMS)</li>
+                    </ul>
                 </div>
+
                 <div class="skill-card white-panel">
-                    <i class="fas fa-server text-red"></i>
-                    <h3>Infrastructure</h3>
-                    <p>cPanel Administration, Vercel Deployments, Google Cloud Console.</p>
+                    <i class="fas fa-hashtag text-orange" style="font-size: 2.5rem; margin-bottom: 15px;"></i>
+                    <h3>Social Media Management</h3>
+                    <ul class="achievement-list" style="margin-top: 10px;">
+                        <li><i class="fas fa-check text-orange"></i> Graphic design & content creation (Canva)</li>
+                        <li><i class="fas fa-check text-orange"></i> Brand voice & community engagement</li>
+                        <li><i class="fas fa-check text-orange"></i> Analytics tracking & KPI reporting</li>
+                        <li><i class="fas fa-check text-orange"></i> Campaign scaling & audience growth</li>
+                    </ul>
                 </div>
+
                 <div class="skill-card white-panel">
-                    <i class="fas fa-project-diagram text-orange"></i>
-                    <h3>Data Architecture</h3>
-                    <p>Daraja API / M-Pesa Integration, Advanced Google Sheets KPI flows.</p>
+                    <i class="fas fa-headset text-red" style="font-size: 2.5rem; margin-bottom: 15px;"></i>
+                    <h3>Customer Service</h3>
+                    <ul class="achievement-list" style="margin-top: 10px;">
+                        <li><i class="fas fa-check text-red"></i> Frontline client communications</li>
+                        <li><i class="fas fa-check text-red"></i> Conflict resolution & de-escalation</li>
+                        <li><i class="fas fa-check text-red"></i> Omnichannel helpdesk support</li>
+                        <li><i class="fas fa-check text-red"></i> Translating tech solutions for end-users</li>
+                    </ul>
                 </div>
+
                 <div class="skill-card white-panel">
-                    <i class="fas fa-bullseye text-blue"></i>
-                    <h3>Digital Ops</h3>
-                    <p>System Design, E-commerce Scaling, SEO via Google Search Console.</p>
+                    <i class="fas fa-network-wired text-green" style="font-size: 2.5rem; margin-bottom: 15px; color: #006838;"></i>
+                    <h3>ICT Infrastructure</h3>
+                    <ul class="achievement-list" style="margin-top: 10px;">
+                        <li><i class="fas fa-check text-green"></i> Hardware diagnostics & repair</li>
+                        <li><i class="fas fa-check text-green"></i> Network administration & security</li>
+                        <li><i class="fas fa-check text-green"></i> Software troubleshooting & deployment</li>
+                        <li><i class="fas fa-check text-green"></i> Lab environment management</li>
+                    </ul>
                 </div>
+
             </div>
         </section>
 
-        <!-- ================= EXPERIENCE TIMELINE ================= -->
         <section id="experience" class="container fade-in">
             <div class="section-header">
                 <h2>Professional <span class="text-red">Experience</span></h2>
@@ -198,15 +215,14 @@
                 <div class="timeline-node active">
                     <div class="timeline-dot"></div>
                     <div class="timeline-header">
-                        <h3>Digital Ops & Social Media Manager</h3>
-                        <span>Dec 2024 – Present</span>
-                        <p class="company">Powerstar Supermarkets – Nairobi</p>
+                        <h3>Website Management & Development</h3>
+                        <span>Nov 2025 – Present</span>
+                        <p class="company">Powerstar Supermarkets</p>
                     </div>
                     <div class="timeline-content">
-                        <ul style="margin-top: 1.5rem;">
-                            <li><strong>Revenue Engine:</strong> Managed digital campaigns driving sales beyond KES 1.5 Million, scaling the brand to over 30,000 followers.</li>
-                            <li><strong>Infrastructure Mgmt:</strong> Governed the <em>powerstarsupermarkets.co.ke</em> domain via Vercel and cPanel.</li>
-                            <li><strong>Systems Architecture:</strong> Engineered a hierarchical permissions structure using Google Sheets to automate branch auditing.</li>
+                        <ul class="achievement-list">
+                            <li><i class="fas fa-angle-right"></i> <strong>Impact:</strong> Managed and refactored the digital storefront, drastically improving UI/UX and site performance.</li>
+                            <li><i class="fas fa-angle-right"></i> <strong>Efficiency:</strong> Streamlined online operational workflows, integrating secure data tracking and ensuring high website uptime for thousands of daily users.</li>
                         </ul>
                     </div>
                 </div>
@@ -214,13 +230,14 @@
                 <div class="timeline-node">
                     <div class="timeline-dot"></div>
                     <div class="timeline-header">
-                        <h3>Customer Service Representative</h3>
-                        <span>Oct 2024 – Dec 2024</span>
-                        <p class="company">Powerstar Supermarkets – Ruiru</p>
+                        <h3>Social Media Manager</h3>
+                        <span>Apr 2025 – Present</span>
+                        <p class="company">Powerstar Supermarkets</p>
                     </div>
                     <div class="timeline-content">
-                        <ul style="margin-top: 1.5rem;">
-                            <li>Managed frontline operations and supported technical deployment during the transition to new digital POS tracking systems.</li>
+                        <ul class="achievement-list">
+                            <li><i class="fas fa-angle-right"></i> <strong>Impact:</strong> Elevated the brand's digital footprint, curating high-conversion content and managing a community of over 30,000 active followers.</li>
+                            <li><i class="fas fa-angle-right"></i> <strong>Growth:</strong> Improved customer engagement metrics across all social platforms, transforming digital interactions into tangible retail foot traffic.</li>
                         </ul>
                     </div>
                 </div>
@@ -233,8 +250,9 @@
                         <p class="company">JOOUST – Siaya Campus</p>
                     </div>
                     <div class="timeline-content">
-                        <ul style="margin-top: 1.5rem;">
-                            <li>Administered secure ICT lab environments, ensuring network uptime and technical software troubleshooting.</li>
+                        <ul class="achievement-list">
+                            <li><i class="fas fa-angle-right"></i> <strong>Infrastructure:</strong> Maintained computer lab networking and hardware, guaranteeing zero-downtime during peak academic sessions.</li>
+                            <li><i class="fas fa-angle-right"></i> <strong>Support:</strong> Provided critical technical assistance to students and faculty, resolving complex software and hardware issues efficiently.</li>
                         </ul>
                     </div>
                 </div>
@@ -242,91 +260,99 @@
             </div>
         </section>
 
-        <!-- ================= PORTFOLIO / PROJECTS GALLERY ================= -->
-        <section id="projects" class="container fade-in">
+        <section id="achievements" class="container fade-in">
             <div class="section-header">
-                <h2>My <span class="text-blue">Portfolio</span></h2>
+                <h2>Key <span class="text-green">Achievements & Growth</span></h2>
             </div>
             
-            <div class="portfolio-filters">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="web-dev">Web development</button>
-                <button class="filter-btn" data-filter="applications">Applications</button>
-                <button class="filter-btn" data-filter="data">Data Systems</button>
-            </div>
-
-            <div class="projects-grid">
+            <div class="bento-grid">
                 
-                <div class="project-card white-panel portfolio-item" data-category="web-dev" style="padding: 0; overflow: hidden;">
-                    <div class="portfolio-img-wrapper">
-                        <i class="fas fa-laptop-code fallback-icon"></i>
-                        <img src="./assets/images/project-1.jpg" alt="Automated Loyalty Wallet" onerror="this.style.display='none'">
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>Automated Loyalty Wallet</h3>
-                        <p>Web development</p>
-                    </div>
-                </div>
-                
-                <div class="project-card white-panel portfolio-item" data-category="data" style="padding: 0; overflow: hidden;">
-                    <div class="portfolio-img-wrapper">
-                        <i class="fas fa-sitemap fallback-icon"></i>
-                        <img src="./assets/images/project-2.jpg" alt="KPI Architecture" onerror="this.style.display='none'">
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>KPI Tracking Architecture</h3>
-                        <p>Data Systems</p>
-                    </div>
+                <div class="bento-item span-4" style="border-top: 4px solid var(--accent-blue);">
+                    <h3 style="margin-bottom: 1rem;"><i class="fas fa-code text-blue"></i> Web Development</h3>
+                    <ul class="achievement-list">
+                        <li><strong><i class="fas fa-trophy text-orange"></i> Achievement:</strong> Successfully refactored and deployed a scalable e-commerce frontend.</li>
+                        <li><strong><i class="fas fa-dumbbell text-blue"></i> Strength:</strong> Rapid adaptability to new coding frameworks and meticulous attention to UI detail.</li>
+                        <li><strong><i class="fas fa-mountain text-red"></i> Challenge Overcome:</strong> Modernizing legacy systems without disrupting live customer transactions.</li>
+                        <li><strong><i class="fas fa-lightbulb text-green"></i> Learning:</strong> Deepened understanding of scalable digital architecture and API integrations.</li>
+                    </ul>
+                    <span class="badge-ready">Ready for complex System Design challenges</span>
                 </div>
 
-                <div class="project-card white-panel portfolio-item" data-category="web-dev" style="padding: 0; overflow: hidden;">
-                    <div class="portfolio-img-wrapper">
-                        <i class="fas fa-shopping-cart fallback-icon"></i>
-                        <img src="./assets/images/project-3.jpg" alt="Procurement Portal" onerror="this.style.display='none'">
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>Digital Procurement Portal</h3>
-                        <p>Web development</p>
-                    </div>
+                <div class="bento-item span-4" style="border-top: 4px solid var(--accent-orange);">
+                    <h3 style="margin-bottom: 1rem;"><i class="fas fa-hashtag text-orange"></i> Social Media</h3>
+                    <ul class="achievement-list">
+                        <li><strong><i class="fas fa-trophy text-orange"></i> Achievement:</strong> Scaled digital community to 30,000+ followers with high engagement rates.</li>
+                        <li><strong><i class="fas fa-dumbbell text-blue"></i> Strength:</strong> Creative strategy, Canva design, and intuitive understanding of audience analytics.</li>
+                        <li><strong><i class="fas fa-mountain text-red"></i> Challenge Overcome:</strong> Navigating algorithm changes while maintaining consistent brand visibility.</li>
+                        <li><strong><i class="fas fa-lightbulb text-green"></i> Learning:</strong> Mastered data-driven content creation to maximize ROI.</li>
+                    </ul>
+                    <span class="badge-ready">Ready to lead large-scale digital campaigns</span>
                 </div>
 
-                <div class="project-card white-panel portfolio-item" data-category="applications" style="padding: 0; overflow: hidden;">
-                    <div class="portfolio-img-wrapper">
-                        <i class="fas fa-mobile-alt fallback-icon"></i>
-                        <img src="./assets/images/project-4.jpg" alt="Mobile App UI" onerror="this.style.display='none'">
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>Omnichannel Rewards App</h3>
-                        <p>Applications</p>
-                    </div>
-                </div>
-
-                <div class="project-card white-panel portfolio-item" data-category="data" style="padding: 0; overflow: hidden;">
-                    <div class="portfolio-img-wrapper">
-                        <i class="fas fa-database fallback-icon"></i>
-                        <img src="./assets/images/project-5.jpg" alt="Data Flow System" onerror="this.style.display='none'">
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>M-Pesa API Integration</h3>
-                        <p>Data Systems</p>
-                    </div>
-                </div>
-
-                <div class="project-card white-panel portfolio-item" data-category="applications" style="padding: 0; overflow: hidden;">
-                    <div class="portfolio-img-wrapper">
-                        <i class="fas fa-desktop fallback-icon"></i>
-                        <img src="./assets/images/project-6.jpg" alt="Dashboard UI" onerror="this.style.display='none'">
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>Branch Auditing Dashboard</h3>
-                        <p>Applications</p>
-                    </div>
+                <div class="bento-item span-4" style="border-top: 4px solid var(--accent-red);">
+                    <h3 style="margin-bottom: 1rem;"><i class="fas fa-server text-red"></i> ICT Operations</h3>
+                    <ul class="achievement-list">
+                        <li><strong><i class="fas fa-trophy text-orange"></i> Achievement:</strong> Maintained near 100% uptime for campus lab networks during crucial exam periods.</li>
+                        <li><strong><i class="fas fa-dumbbell text-blue"></i> Strength:</strong> Analytical problem-solving and rapid hardware/software diagnostics.</li>
+                        <li><strong><i class="fas fa-mountain text-red"></i> Challenge Overcome:</strong> Optimizing network performance under strict academic resource constraints.</li>
+                        <li><strong><i class="fas fa-lightbulb text-green"></i> Learning:</strong> Built a robust foundation in enterprise IT infrastructure management.</li>
+                    </ul>
+                    <span class="badge-ready">Ready for Enterprise IT Support roles</span>
                 </div>
 
             </div>
         </section>
 
-        <!-- ================= CONTACT SECTION ================= -->
+        <section id="projects" class="container fade-in">
+            <div class="section-header">
+                <h2>My <span class="text-blue">Portfolio</span></h2>
+                <p style="text-align: center; color: var(--text-muted); margin-top: 10px; font-size: 1.1rem;">A showcase of my capabilities as a Computer Science student and Digital Strategist.</p>
+            </div>
+
+            <div class="projects-grid">
+                
+                <div class="project-card portfolio-item">
+                    <div class="portfolio-img-wrapper">
+                        <i class="fas fa-laptop-code" style="font-size: 4rem; color: #ccc; position: absolute; z-index: 1;"></i>
+                        <img src="./assets/images/portfolio-web.jpg" alt="E-Commerce Frontend" onerror="this.style.opacity='0'" style="position: relative; z-index: 2;">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3 style="font-size: 1.1rem; color: var(--eerie-black); margin-bottom: 5px;">E-Commerce Web Architecture</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Modern UI/UX design, integrating seamless user journeys with robust backend logic for retail.</p>
+                    </div>
+                </div>
+                
+                <div class="project-card portfolio-item">
+                    <div class="portfolio-img-wrapper">
+                        <i class="fas fa-paint-brush" style="font-size: 4rem; color: #ccc; position: absolute; z-index: 1;"></i>
+                        <img src="./assets/images/portfolio-social.jpg" alt="Social Media Campaigns" onerror="this.style.opacity='0'" style="position: relative; z-index: 2;">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3 style="font-size: 1.1rem; color: var(--eerie-black); margin-bottom: 5px;">Digital Marketing & Canva Designs</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">High-conversion graphic design and targeted content calendars that grew audiences to 30K+.</p>
+                    </div>
+                </div>
+
+                <div class="project-card portfolio-item">
+                    <div class="portfolio-img-wrapper">
+                        <i class="fas fa-network-wired" style="font-size: 4rem; color: #ccc; position: absolute; z-index: 1;"></i>
+                        <img src="./assets/images/portfolio-ict.jpg" alt="ICT Infrastructure" onerror="this.style.opacity='0'" style="position: relative; z-index: 2;">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3 style="font-size: 1.1rem; color: var(--eerie-black); margin-bottom: 5px;">ICT Systems Diagnostics</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Hardware troubleshooting, network configurations, and maintaining secure digital environments.</p>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="./assets/docs/Mark_Oduor_Portfolio.pdf" target="_blank" class="btn-dark" style="padding: 15px 30px; font-size: 1.1rem;">
+                    View Full Interactive Portfolio <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+                </a>
+            </div>
+        </section>
+
         <section id="contact" class="container fade-in">
             <div class="section-header">
                 <h2>Let's <span class="text-orange">Connect</span></h2>
@@ -339,46 +365,34 @@
                     <p><i class="fas fa-envelope text-blue"></i> <a href="mailto:oduor.markochieng@gmail.com">oduor.markochieng@gmail.com</a></p>
                     
                     <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(0,0,0,0.05);">
-                        <p style="font-size: 0.95rem; color: var(--text-muted);">Looking for a Systems Architect to scale your digital infrastructure? I am currently open to new software engineering opportunities.</p>
+                        <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">
+                            Are you looking for a dedicated <strong>Systems Architect, Social Media Manager, or ICT Professional</strong>? With a foundation in Computer Science and proven success in retail digital scaling, I am open to exciting new opportunities.
+                        </p>
                     </div>
                 </div>
                 
                 <form action="https://formspree.io/f/xdabjbdb" method="POST" class="white-panel contact-form">
                     <input type="text" name="name" placeholder="Your Full Name" required>
                     <input type="email" name="_replyto" placeholder="Your Professional Email" required>
-                    <textarea name="message" placeholder="How can I help scale your operations?" rows="6" required></textarea>
+                    <textarea name="message" placeholder="How can I add value to your team?" rows="6" required></textarea>
                     <button type="submit" class="btn-dark" style="margin-bottom: 0; width: 100%;">Send Message</button>
                 </form>
             </div>
         </section>
     </main>
 
-    <!-- Popup Toast -->
-    <div id="toast-popup" class="toast-popup">
-        <div class="toast-header">
-            <h4>Ready to scale?</h4>
-            <button id="close-toast-btn" class="close-toast"><i class="fas fa-times"></i></button>
-        </div>
-        <p>I build revenue-generating digital systems. Let's discuss your next big technical project.</p>
-        <div class="toast-actions">
-            <a href="mailto:oduor.markochieng@gmail.com" class="toast-btn btn-solid">Email Me</a>
-            <a href="#contact" id="toast-contact-link" class="toast-btn btn-outline">Contact Form</a>
-        </div>
-    </div>
-
-    <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-brand">
-                <h3><i class="fas fa-code text-blue"></i> Mark Oduor</h3>
-                <p>Scaling digital infrastructure, integrating e-commerce solutions, and bridging the gap between business logic and robust technical architecture.</p>
+                <h3><i class="fas fa-code text-blue"></i> Mark Ochieng Oduor</h3>
+                <p>A passionate Computer Science student and digital professional specializing in Web Management, Social Media Strategy, and robust ICT support.</p>
             </div>
             <div class="footer-links">
                 <h4>Explore</h4>
                 <ul>
-                    <li><a href="#about">About My Strategy</a></li>
+                    <li><a href="#about">My Evolution</a></li>
                     <li><a href="#education">Academic Foundation</a></li>
-                    <li><a href="#experience">Career Journey</a></li>
+                    <li><a href="#achievements">Key Achievements</a></li>
                     <li><a href="#projects">Portfolio Gallery</a></li>
                 </ul>
             </div>
@@ -389,10 +403,14 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; <span id="current-year"></span> Mark Ochieng Oduor. Built with clean code.</p>
+            <p>&copy; <span id="current-year">2026</span> Mark Ochieng Oduor. Designed for impact.</p>
         </div>
     </footer>
 
+    <script>
+        // Update copyright year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
