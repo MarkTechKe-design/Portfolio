@@ -267,6 +267,50 @@ nav {
 .portfolio-item:hover .portfolio-title { color: var(--accent-orange); }
 .portfolio-desc { font-size: 0.95rem; color: var(--text-muted); font-weight: 500; }
 
+/* --- PORTFOLIO FILTER BUTTONS --- */
+.portfolio-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    padding-bottom: 15px;
+}
+
+.filter-btn {
+    background: transparent;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    color: var(--accent-orange);
+}
+
+/* The sleek animated underline */
+.filter-btn::after {
+    content: '';
+    position: absolute;
+    bottom: -16px; /* Aligns perfectly with the container's bottom border */
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--accent-orange);
+    transition: var(--transition-bounce);
+    border-radius: 2px;
+}
+
+.filter-btn:hover::after, .filter-btn.active::after {
+    width: 100%;
+}
 /* =========================================
    9. TOAST POPUP (CRITICAL FIX FOR MOBILE)
 ========================================= */
