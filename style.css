@@ -11,7 +11,7 @@
     --accent-indigo: #1e0098;  
     --accent-orange: #ff7b00;  
     --accent-red: #d90429;     
-    --accent-green: #006838;   /* Aligned with your Powerstar experience */
+    --accent-green: #006838;   
     --avatar-yellow: #ffca28;  
     
     --glass-bg: rgba(255, 255, 255, 0.85);
@@ -23,7 +23,6 @@
     --radius-lg: 24px;
     --radius-md: 16px;
     
-    /* Pro Easing Curves for Snappy Animations */
     --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
@@ -33,13 +32,16 @@
 ========================================= */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+/* CRITICAL FIX: Prevents the hidden toast from breaking the page width */
+html, body { 
+    scroll-behavior: smooth; 
+    overflow-x: hidden; 
+    width: 100%;
+}
 
-/* Custom Brand Text Selection */
 ::selection { background-color: var(--accent-orange); color: #ffffff; }
 ::-moz-selection { background-color: var(--accent-orange); color: #ffffff; }
 
-/* Premium Scrollbar */
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: var(--bg-main); }
 ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
@@ -48,8 +50,7 @@ html { scroll-behavior: smooth; }
 body {
     background-color: var(--bg-main); color: var(--text-dark);
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    line-height: 1.6; position: relative; overflow-x: hidden; 
-    /* Font Optimization for High-Res Screens */
+    line-height: 1.6; position: relative; 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -60,7 +61,6 @@ body {
 h1, h2, h3, h4, .nav-logo { font-family: 'Poppins', sans-serif; font-weight: 700; letter-spacing: -0.02em; }
 a { text-decoration: none; color: inherit; }
 
-/* Text Utilities */
 .text-orange { color: var(--accent-orange) !important; }
 .text-red { color: var(--accent-red) !important; }
 .text-blue { color: var(--accent-blue) !important; }
@@ -83,7 +83,6 @@ a { text-decoration: none; color: inherit; }
     transition: var(--transition-smooth); position: relative; z-index: 10; overflow: hidden;
 }
 
-/* Reusable Hover Effects */
 .hover-lift { transition: var(--transition-bounce); }
 .hover-lift:hover {
     transform: translateY(-8px);
@@ -102,19 +101,16 @@ a { text-decoration: none; color: inherit; }
 
 .span-4 { grid-column: span 4; } .span-6 { grid-column: span 6; } .span-8 { grid-column: span 8; } .span-12 { grid-column: span 12; }
 
-/* Bento Content Styling */
 .bento-title { margin-bottom: 1rem; font-size: 1.4rem; }
 .bento-subtitle { color: var(--text-muted); font-weight: 500; margin-bottom: 1rem; }
 .bento-text-bold { margin-bottom: 1rem; font-size: 1.1rem; color: var(--text-dark); }
 .bento-text-muted { color: var(--text-muted); line-height: 1.8; }
 .bento-icon { font-size: 2rem; margin-bottom: 1rem; }
 
-/* Border Top Utilities */
 .border-top-blue { border-top: 4px solid var(--accent-blue); }
 .border-top-orange { border-top: 4px solid var(--accent-orange); }
 .border-top-red { border-top: 4px solid var(--accent-red); }
 
-/* Badges */
 .badge-blue, .badge-orange, .badge-red {
     padding: 8px 12px; border-radius: 8px; font-size: 0.85rem; display: inline-block; font-weight: 600;
 }
@@ -146,7 +142,6 @@ nav {
 
 .hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 2.5rem; }
 
-/* Buttons */
 .btn-dark {
     display: inline-flex; justify-content: center; align-items: center; padding: 14px 36px; border-radius: 50px; font-weight: 600; font-family: 'Poppins', sans-serif;
     background-color: var(--accent-indigo); color: #fff; transition: var(--transition-bounce); box-shadow: var(--shadow-glow); cursor: pointer; border: none;
@@ -230,7 +225,6 @@ nav {
 .timeline-content { max-height: 0; overflow: hidden; padding: 0 2rem; opacity: 0; transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1), padding 0.4s ease, opacity 0.4s ease; background: #f8fafc; border-radius: 0 0 var(--radius-lg) var(--radius-lg); margin: 0 2px; transform: translateY(-10px); }
 .timeline-node.active .timeline-content { max-height: 600px; padding: 2rem; opacity: 1; border: 1px solid rgba(0,0,0,0.03); border-top: none; transform: translateY(0); }
 
-/* Contact Container */
 .contact-container { display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem; }
 .contact-title { margin-bottom: 1.5rem; font-size: 1.5rem; }
 .contact-detail { margin-bottom: 1.2rem; color: var(--text-muted); font-weight: 500; font-size: 1.1rem;}
@@ -274,7 +268,40 @@ nav {
 .portfolio-desc { font-size: 0.95rem; color: var(--text-muted); font-weight: 500; }
 
 /* =========================================
-   9. FOOTER & RESPONSIVE
+   9. TOAST POPUP (CRITICAL FIX FOR MOBILE)
+========================================= */
+.toast-popup { 
+    position: fixed; 
+    bottom: 30px; 
+    /* Changed from -400px to just moving it via transform to stop body width issues */
+    right: 30px; 
+    transform: translateX(120%); 
+    width: 360px; 
+    background: var(--glass-bg); 
+    backdrop-filter: saturate(180%) blur(25px); 
+    border: 1px solid var(--glass-border); 
+    border-radius: var(--radius-lg); 
+    padding: 2rem; 
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15); 
+    transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55); 
+    z-index: 9999; 
+}
+.toast-popup.active { transform: translateX(0); } 
+
+.toast-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+.toast-header h4 { font-size: 1.1rem; color: var(--text-dark); }
+.close-toast { background: none; border: none; font-size: 1.5rem; color: var(--text-muted); cursor: pointer; transition: var(--transition-bounce);}
+.close-toast:hover { color: var(--accent-red); transform: rotate(90deg); }
+.toast-popup p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;}
+.toast-actions { display: flex; gap: 10px; }
+.toast-btn { flex: 1; text-align: center; padding: 10px; border-radius: 8px; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+.btn-solid { background: var(--accent-blue); color: #fff; }
+.btn-solid:hover { background: #000; }
+.btn-outline { background: transparent; border: 1px solid var(--accent-blue); color: var(--accent-blue); }
+.btn-outline:hover { background: rgba(11, 11, 42, 0.05); }
+
+/* =========================================
+   10. FOOTER & RESPONSIVE
 ========================================= */
 .site-footer { background-color: #ffffff; color: var(--text-dark); padding: 80px 5% 30px; margin-top: 80px; border-top: 1px solid rgba(0,0,0,0.05); }
 .footer-container { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; max-width: 1200px; margin: 0 auto; margin-bottom: 60px; }
@@ -290,6 +317,7 @@ nav {
 
 .icon-margin { margin-right: 8px; }
 
+/* Desktop scaling */
 @media (max-width: 1024px) {
     .bento-grid { grid-template-columns: repeat(8, 1fr); }
     .span-4, .span-6, .span-8 { grid-column: span 8; }
@@ -300,12 +328,32 @@ nav {
     .avatar-wrapper { justify-content: center; }
     .academic-narrative { padding: 20px; }
 }
+
+/* Strict Mobile Fixes */
 @media (max-width: 768px) {
     .nav-links { display: none; } 
     .contact-container, .footer-container { grid-template-columns: 1fr; }
-    .avatar-circle { width: 320px; height: 320px; }
-    .timeline-node { padding-left: 50px; }
+    
+    /* Ensure Bento Grid doesn't break boundaries */
+    .bento-grid { grid-template-columns: 1fr; }
+    .bento-item, .white-panel { padding: 1.5rem; }
+    
+    .avatar-circle { width: 300px; height: 300px; margin: 0 auto; }
+    
+    /* Timeline Fixes */
+    .timeline-node { padding-left: 40px; }
     .timeline-dot { left: 8px; }
     .timeline-wrapper::before { left: 16px; }
-    .achievement-card { min-width: 280px; max-width: 280px; }
+    
+    /* Achievement Slider Mobile Constraint */
+    .achievement-card { min-width: 85vw; max-width: 85vw; }
+    
+    /* Toast Popup Mobile Fix */
+    .toast-popup { 
+        width: 90vw; 
+        right: 5vw; 
+        bottom: 20px; 
+        transform: translateY(150%); /* Hide via Y axis instead of X on mobile */
+    }
+    .toast-popup.active { transform: translateY(0); }
 }
