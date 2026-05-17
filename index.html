@@ -4,34 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mark Ochieng Oduor | Digital Engineer & Social Media Strategist</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;700;800&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Additional Inline Styles for New Elements to Ensure Beautiful Rendering */
-        .hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; margin: 1.5rem 0; }
-        .btn-outline-custom { border: 2px solid #1A1A1A; padding: 12px 24px; border-radius: 8px; font-weight: 600; color: #1A1A1A; transition: all 0.3s ease; text-decoration: none; display: inline-flex; align-items: center; }
-        .btn-outline-custom:hover { background: #1A1A1A; color: #fff; }
-        .achievement-list { list-style: none; padding: 0; margin-top: 15px; }
-        .achievement-list li { margin-bottom: 12px; font-size: 0.95rem; line-height: 1.5; color: #444; display: flex; align-items: flex-start; gap: 10px; }
-        .achievement-list li i { margin-top: 4px; }
-        .badge-ready { display: inline-block; background: #e8f5e9; color: #006838; padding: 5px 12px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; margin-top: 15px; border: 1px solid #006838; }
-        .portfolio-item { position: relative; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: 0.3s; background: #fff; }
-        .portfolio-item:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        .portfolio-img-wrapper { height: 200px; background: #f8f9fa; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-        .portfolio-img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-        .portfolio-item:hover .portfolio-img-wrapper img { transform: scale(1.05); }
-        .portfolio-info { padding: 20px; }
-        .text-green { color: #006838; }
-    </style>
 </head>
 <body>
 
     <canvas id="network-canvas"></canvas>
 
-    <nav id="navbar">
+    <nav id="navbar" class="navbar">
         <div class="nav-logo">
-            <i class="fas fa-code text-blue" style="margin-right: 8px;"></i>Mark
+            <i class="fas fa-code text-blue icon-margin"></i>Mark
         </div>
         <ul class="nav-links">
             <li><a href="#hero" class="active">Home</a></li>
@@ -46,7 +34,7 @@
     </nav>
 
     <main>
-        <section id="hero" class="container">
+        <section id="hero" class="container hero-section">
             <div class="hero-grid">
                 <div class="hero-text fade-in">
                     <h2>Hi There, <br> I'm Mark <span class="text-orange">Oduor</span></h2>
@@ -55,10 +43,10 @@
                     
                     <div class="hero-buttons">
                         <a href="./assets/docs/Mark_Oduor_CV.pdf" target="_blank" class="btn-dark">
-                            Download CV <i class="fas fa-download" style="margin-left: 8px;"></i>
+                            Download CV <i class="fas fa-download icon-margin"></i>
                         </a>
-                        <a href="./assets/docs/Mark_Oduor_Portfolio.pdf" target="_blank" class="btn-outline-custom">
-                            View My Portfolio <i class="fas fa-external-link-alt" style="margin-left: 8px;"></i>
+                        <a href="./assets/docs/Mark_Oduor_Portfolio.pdf" target="_blank" class="btn-outline">
+                            View My Portfolio <i class="fas fa-external-link-alt icon-margin"></i>
                         </a>
                     </div>
                     
@@ -71,8 +59,8 @@
                 
                 <div class="avatar-wrapper fade-in">
                     <div class="avatar-circle">
-                        <i class="fas fa-laptop-code" style="font-size: 8rem; color: #ffffff; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1;"></i>
-                        <img src="./assets/images/profile-pic.png" alt="Mark Oduor" onerror="this.style.display='none'" style="position: relative; z-index: 2; width: 100%; height: 100%; object-fit: cover; object-position: bottom;">
+                        <i class="fas fa-laptop-code avatar-fallback-icon"></i>
+                        <img src="./assets/images/profile-pic.png" alt="Mark Oduor" class="avatar-img" onerror="this.style.display='none'">
                     </div>
                 </div>
             </div>
@@ -85,30 +73,30 @@
             
             <div class="bento-grid">
                 <div class="bento-item span-8">
-                    <h3 style="color: var(--accent-blue); margin-bottom: 1rem; font-size: 1.4rem;">Bridging Customer Experience & Clean Code</h3>
-                    <p style="margin-bottom: 1rem; font-size: 1.1rem; color: var(--text-dark);">
+                    <h3 class="bento-title text-blue">Bridging Customer Experience & Clean Code</h3>
+                    <p class="bento-text-bold">
                         I am a versatile <strong>Web Manager, Social Media Strategist, and ICT Professional</strong>. My journey represents a deliberate and passionate transition from the medical field into the dynamic world of technology and digital communications.
                     </p>
-                    <p style="color: var(--text-muted); line-height: 1.8;">
+                    <p class="bento-text-muted">
                         Today, I specialize in crafting engaging online presences, resolving complex IT infrastructure issues, and delivering top-tier customer service. Whether I am architecting a website's frontend, designing viral Canva portfolios, or managing customer relations, I bring analytical precision and creative problem-solving to every digital touchpoint.
                     </p>
                 </div>
 
                 <div class="bento-item span-4 growth-mindset-block">
-                    <h3 style="margin-bottom: 1.5rem; font-size: 1.2rem;">My Evolution</h3>
+                    <h3 class="bento-title">My Evolution</h3>
                     
-                    <div style="margin-bottom: 1.5rem;">
-                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 5px;">Foundation</p>
-                        <p style="color: var(--accent-red); font-weight: 500;"><i class="fas fa-user-md"></i> Healthcare & Patient Care</p>
+                    <div class="evolution-step">
+                        <p class="evolution-label">Foundation</p>
+                        <p class="evolution-value text-red"><i class="fas fa-user-md"></i> Healthcare & Patient Care</p>
                     </div>
                     
-                    <div style="color: var(--accent-orange); font-size: 1.5rem; margin: 1rem 0; text-align: center;">
+                    <div class="evolution-arrow text-orange">
                         <i class="fas fa-arrow-down"></i>
                     </div>
                     
-                    <div>
-                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 5px;">Current Focus</p>
-                        <p style="color: #059669; font-weight: 600; padding: 10px; background: #ecfdf5; border-radius: 8px;">
+                    <div class="evolution-step">
+                        <p class="evolution-label">Current Focus</p>
+                        <p class="evolution-value-highlight">
                             <i class="fas fa-laptop-code"></i> Web, ICT & Digital Marketing
                         </p>
                     </div>
@@ -122,34 +110,32 @@
             </div>
             
             <div class="bento-grid">
-                
-                <div class="bento-item span-4" style="border-top: 4px solid var(--accent-blue);">
-                    <i class="fas fa-university text-blue" style="font-size: 2rem; margin-bottom: 1rem;"></i>
-                    <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Bachelor of Science in Computer Science</h3>
-                    <p style="color: var(--text-muted); font-weight: 500; margin-bottom: 1rem;">University of the People (USA)</p>
-                    <p style="background: rgba(37, 99, 235, 0.1); color: var(--accent-blue); padding: 8px 12px; border-radius: 8px; font-size: 0.85rem; display: inline-block; font-weight: 600;">
+                <div class="bento-item span-4 border-top-blue">
+                    <i class="fas fa-university text-blue bento-icon"></i>
+                    <h3 class="bento-title">Bachelor of Science in Computer Science</h3>
+                    <p class="bento-subtitle">University of the People (USA)</p>
+                    <p class="badge-blue">
                         <i class="fas fa-laptop-code"></i> Current Undergraduate Student
                     </p>
                 </div>
 
-                <div class="bento-item span-4" style="border-top: 4px solid var(--accent-orange);">
-                    <i class="fas fa-network-wired text-orange" style="font-size: 2rem; margin-bottom: 1rem;"></i>
-                    <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Diploma in Information & Communication Technology</h3>
-                    <p style="color: var(--text-muted); font-weight: 500; margin-bottom: 1rem;">Siaya National Polytechnic</p>
-                    <p style="background: rgba(245, 158, 11, 0.1); color: var(--accent-orange); padding: 8px 12px; border-radius: 8px; font-size: 0.85rem; display: inline-block; font-weight: 600;">
+                <div class="bento-item span-4 border-top-orange">
+                    <i class="fas fa-network-wired text-orange bento-icon"></i>
+                    <h3 class="bento-title">Diploma in Information & Communication Technology</h3>
+                    <p class="bento-subtitle">Siaya National Polytechnic</p>
+                    <p class="badge-orange">
                         <i class="fas fa-star"></i> Passed with Distinction
                     </p>
                 </div>
 
-                <div class="bento-item span-4" style="border-top: 4px solid var(--accent-red);">
-                    <i class="fas fa-graduation-cap text-red" style="font-size: 2rem; margin-bottom: 1rem;"></i>
-                    <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Certificate in Orthopaedic Trauma Medicine</h3>
-                    <p style="color: var(--text-muted); font-weight: 500; margin-bottom: 1rem;">KMTC - Medical School</p>
-                    <p style="background: rgba(217, 4, 41, 0.1); color: var(--accent-red); padding: 8px 12px; border-radius: 8px; font-size: 0.85rem; display: inline-block; font-weight: 600;">
+                <div class="bento-item span-4 border-top-red">
+                    <i class="fas fa-graduation-cap text-red bento-icon"></i>
+                    <h3 class="bento-title">Certificate in Orthopaedic Trauma Medicine</h3>
+                    <p class="bento-subtitle">KMTC - Medical School</p>
+                    <p class="badge-red">
                         <i class="fas fa-check-circle"></i> Graduated successfully before transitioning to Tech.
                     </p>
                 </div>
-
             </div>
         </section>
 
@@ -157,12 +143,12 @@
             <div class="section-header">
                 <h2>Core <span class="text-blue">Competencies</span></h2>
             </div>
+            
             <div class="skills-grid">
-                
                 <div class="skill-card white-panel">
-                    <i class="fas fa-globe text-blue" style="font-size: 2.5rem; margin-bottom: 15px;"></i>
+                    <i class="fas fa-globe text-blue skill-icon"></i>
                     <h3>Website Management</h3>
-                    <ul class="achievement-list" style="margin-top: 10px;">
+                    <ul class="achievement-list">
                         <li><i class="fas fa-check text-blue"></i> HTML, CSS, JavaScript integration</li>
                         <li><i class="fas fa-check text-blue"></i> E-commerce platform maintenance</li>
                         <li><i class="fas fa-check text-blue"></i> UI/UX optimization & frontend updates</li>
@@ -171,9 +157,9 @@
                 </div>
 
                 <div class="skill-card white-panel">
-                    <i class="fas fa-hashtag text-orange" style="font-size: 2.5rem; margin-bottom: 15px;"></i>
+                    <i class="fas fa-hashtag text-orange skill-icon"></i>
                     <h3>Social Media Management</h3>
-                    <ul class="achievement-list" style="margin-top: 10px;">
+                    <ul class="achievement-list">
                         <li><i class="fas fa-check text-orange"></i> Graphic design & content creation (Canva)</li>
                         <li><i class="fas fa-check text-orange"></i> Brand voice & community engagement</li>
                         <li><i class="fas fa-check text-orange"></i> Analytics tracking & KPI reporting</li>
@@ -182,9 +168,9 @@
                 </div>
 
                 <div class="skill-card white-panel">
-                    <i class="fas fa-headset text-red" style="font-size: 2.5rem; margin-bottom: 15px;"></i>
+                    <i class="fas fa-headset text-red skill-icon"></i>
                     <h3>Customer Service</h3>
-                    <ul class="achievement-list" style="margin-top: 10px;">
+                    <ul class="achievement-list">
                         <li><i class="fas fa-check text-red"></i> Frontline client communications</li>
                         <li><i class="fas fa-check text-red"></i> Conflict resolution & de-escalation</li>
                         <li><i class="fas fa-check text-red"></i> Omnichannel helpdesk support</li>
@@ -193,16 +179,15 @@
                 </div>
 
                 <div class="skill-card white-panel">
-                    <i class="fas fa-network-wired text-green" style="font-size: 2.5rem; margin-bottom: 15px; color: #006838;"></i>
+                    <i class="fas fa-server text-green skill-icon"></i>
                     <h3>ICT Infrastructure</h3>
-                    <ul class="achievement-list" style="margin-top: 10px;">
+                    <ul class="achievement-list">
                         <li><i class="fas fa-check text-green"></i> Hardware diagnostics & repair</li>
                         <li><i class="fas fa-check text-green"></i> Network administration & security</li>
                         <li><i class="fas fa-check text-green"></i> Software troubleshooting & deployment</li>
                         <li><i class="fas fa-check text-green"></i> Lab environment management</li>
                     </ul>
                 </div>
-
             </div>
         </section>
 
@@ -210,13 +195,13 @@
             <div class="section-header">
                 <h2>Professional <span class="text-red">Experience</span></h2>
             </div>
+            
             <div class="timeline-wrapper" id="timeline-container">
-                
                 <div class="timeline-node active">
                     <div class="timeline-dot"></div>
                     <div class="timeline-header">
                         <h3>Website Management & Development</h3>
-                        <span>Nov 2025 – Present</span>
+                        <span class="timeline-date">Nov 2025 – Present</span>
                         <p class="company">Powerstar Supermarkets</p>
                     </div>
                     <div class="timeline-content">
@@ -231,7 +216,7 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-header">
                         <h3>Social Media Manager</h3>
-                        <span>Apr 2025 – Present</span>
+                        <span class="timeline-date">Apr 2025 – Present</span>
                         <p class="company">Powerstar Supermarkets</p>
                     </div>
                     <div class="timeline-content">
@@ -246,7 +231,7 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-header">
                         <h3>ICT Laboratory Technician (Attaché)</h3>
-                        <span>Sep 2023 – Dec 2023</span>
+                        <span class="timeline-date">Sep 2023 – Dec 2023</span>
                         <p class="company">JOOUST – Siaya Campus</p>
                     </div>
                     <div class="timeline-content">
@@ -256,7 +241,6 @@
                         </ul>
                     </div>
                 </div>
-
             </div>
         </section>
 
@@ -266,89 +250,85 @@
             </div>
             
             <div class="bento-grid">
-                
-                <div class="bento-item span-4" style="border-top: 4px solid var(--accent-blue);">
-                    <h3 style="margin-bottom: 1rem;"><i class="fas fa-code text-blue"></i> Web Development</h3>
+                <div class="bento-item span-4 border-top-blue">
+                    <h3 class="bento-title"><i class="fas fa-code text-blue"></i> Web Development</h3>
                     <ul class="achievement-list">
                         <li><strong><i class="fas fa-trophy text-orange"></i> Achievement:</strong> Successfully refactored and deployed a scalable e-commerce frontend.</li>
                         <li><strong><i class="fas fa-dumbbell text-blue"></i> Strength:</strong> Rapid adaptability to new coding frameworks and meticulous attention to UI detail.</li>
-                        <li><strong><i class="fas fa-mountain text-red"></i> Challenge Overcome:</strong> Modernizing legacy systems without disrupting live customer transactions.</li>
+                        <li><strong><i class="fas fa-mountain text-red"></i> Challenge:</strong> Modernizing legacy systems without disrupting live customer transactions.</li>
                         <li><strong><i class="fas fa-lightbulb text-green"></i> Learning:</strong> Deepened understanding of scalable digital architecture and API integrations.</li>
                     </ul>
-                    <span class="badge-ready">Ready for complex System Design challenges</span>
+                    <span class="badge-ready">Ready for System Design roles</span>
                 </div>
 
-                <div class="bento-item span-4" style="border-top: 4px solid var(--accent-orange);">
-                    <h3 style="margin-bottom: 1rem;"><i class="fas fa-hashtag text-orange"></i> Social Media</h3>
+                <div class="bento-item span-4 border-top-orange">
+                    <h3 class="bento-title"><i class="fas fa-hashtag text-orange"></i> Social Media</h3>
                     <ul class="achievement-list">
                         <li><strong><i class="fas fa-trophy text-orange"></i> Achievement:</strong> Scaled digital community to 30,000+ followers with high engagement rates.</li>
                         <li><strong><i class="fas fa-dumbbell text-blue"></i> Strength:</strong> Creative strategy, Canva design, and intuitive understanding of audience analytics.</li>
-                        <li><strong><i class="fas fa-mountain text-red"></i> Challenge Overcome:</strong> Navigating algorithm changes while maintaining consistent brand visibility.</li>
+                        <li><strong><i class="fas fa-mountain text-red"></i> Challenge:</strong> Navigating algorithm changes while maintaining consistent brand visibility.</li>
                         <li><strong><i class="fas fa-lightbulb text-green"></i> Learning:</strong> Mastered data-driven content creation to maximize ROI.</li>
                     </ul>
-                    <span class="badge-ready">Ready to lead large-scale digital campaigns</span>
+                    <span class="badge-ready">Ready for Digital Campaign leadership</span>
                 </div>
 
-                <div class="bento-item span-4" style="border-top: 4px solid var(--accent-red);">
-                    <h3 style="margin-bottom: 1rem;"><i class="fas fa-server text-red"></i> ICT Operations</h3>
+                <div class="bento-item span-4 border-top-red">
+                    <h3 class="bento-title"><i class="fas fa-server text-red"></i> ICT Operations</h3>
                     <ul class="achievement-list">
                         <li><strong><i class="fas fa-trophy text-orange"></i> Achievement:</strong> Maintained near 100% uptime for campus lab networks during crucial exam periods.</li>
                         <li><strong><i class="fas fa-dumbbell text-blue"></i> Strength:</strong> Analytical problem-solving and rapid hardware/software diagnostics.</li>
-                        <li><strong><i class="fas fa-mountain text-red"></i> Challenge Overcome:</strong> Optimizing network performance under strict academic resource constraints.</li>
+                        <li><strong><i class="fas fa-mountain text-red"></i> Challenge:</strong> Optimizing network performance under strict academic resource constraints.</li>
                         <li><strong><i class="fas fa-lightbulb text-green"></i> Learning:</strong> Built a robust foundation in enterprise IT infrastructure management.</li>
                     </ul>
-                    <span class="badge-ready">Ready for Enterprise IT Support roles</span>
+                    <span class="badge-ready">Ready for Enterprise IT Support</span>
                 </div>
-
             </div>
         </section>
 
         <section id="projects" class="container fade-in">
             <div class="section-header">
                 <h2>My <span class="text-blue">Portfolio</span></h2>
-                <p style="text-align: center; color: var(--text-muted); margin-top: 10px; font-size: 1.1rem;">A showcase of my capabilities as a Computer Science student and Digital Strategist.</p>
+                <p class="section-subtitle">A showcase of my capabilities as a Computer Science student and Digital Strategist.</p>
             </div>
 
             <div class="projects-grid">
-                
-                <div class="project-card portfolio-item">
+                <div class="portfolio-item">
                     <div class="portfolio-img-wrapper">
-                        <i class="fas fa-laptop-code" style="font-size: 4rem; color: #ccc; position: absolute; z-index: 1;"></i>
-                        <img src="./assets/images/portfolio-web.jpg" alt="E-Commerce Frontend" onerror="this.style.opacity='0'" style="position: relative; z-index: 2;">
+                        <i class="fas fa-laptop-code portfolio-fallback-icon"></i>
+                        <img src="./assets/images/portfolio-web.jpg" alt="E-Commerce Frontend" class="portfolio-img" onerror="this.style.opacity='0'">
                     </div>
                     <div class="portfolio-info">
-                        <h3 style="font-size: 1.1rem; color: var(--eerie-black); margin-bottom: 5px;">E-Commerce Web Architecture</h3>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">Modern UI/UX design, integrating seamless user journeys with robust backend logic for retail.</p>
+                        <h3 class="portfolio-title">E-Commerce Web Architecture</h3>
+                        <p class="portfolio-desc">Modern UI/UX design, integrating seamless user journeys with robust backend logic for retail.</p>
                     </div>
                 </div>
                 
-                <div class="project-card portfolio-item">
+                <div class="portfolio-item">
                     <div class="portfolio-img-wrapper">
-                        <i class="fas fa-paint-brush" style="font-size: 4rem; color: #ccc; position: absolute; z-index: 1;"></i>
-                        <img src="./assets/images/portfolio-social.jpg" alt="Social Media Campaigns" onerror="this.style.opacity='0'" style="position: relative; z-index: 2;">
+                        <i class="fas fa-paint-brush portfolio-fallback-icon"></i>
+                        <img src="./assets/images/portfolio-social.jpg" alt="Social Media Campaigns" class="portfolio-img" onerror="this.style.opacity='0'">
                     </div>
                     <div class="portfolio-info">
-                        <h3 style="font-size: 1.1rem; color: var(--eerie-black); margin-bottom: 5px;">Digital Marketing & Canva Designs</h3>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">High-conversion graphic design and targeted content calendars that grew audiences to 30K+.</p>
+                        <h3 class="portfolio-title">Digital Marketing & Canva Designs</h3>
+                        <p class="portfolio-desc">High-conversion graphic design and targeted content calendars that grew audiences to 30K+.</p>
                     </div>
                 </div>
 
-                <div class="project-card portfolio-item">
+                <div class="portfolio-item">
                     <div class="portfolio-img-wrapper">
-                        <i class="fas fa-network-wired" style="font-size: 4rem; color: #ccc; position: absolute; z-index: 1;"></i>
-                        <img src="./assets/images/portfolio-ict.jpg" alt="ICT Infrastructure" onerror="this.style.opacity='0'" style="position: relative; z-index: 2;">
+                        <i class="fas fa-network-wired portfolio-fallback-icon"></i>
+                        <img src="./assets/images/portfolio-ict.jpg" alt="ICT Infrastructure" class="portfolio-img" onerror="this.style.opacity='0'">
                     </div>
                     <div class="portfolio-info">
-                        <h3 style="font-size: 1.1rem; color: var(--eerie-black); margin-bottom: 5px;">ICT Systems Diagnostics</h3>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">Hardware troubleshooting, network configurations, and maintaining secure digital environments.</p>
+                        <h3 class="portfolio-title">ICT Systems Diagnostics</h3>
+                        <p class="portfolio-desc">Hardware troubleshooting, network configurations, and maintaining secure digital environments.</p>
                     </div>
                 </div>
-
             </div>
             
-            <div style="text-align: center; margin-top: 30px;">
-                <a href="./assets/docs/Mark_Oduor_Portfolio.pdf" target="_blank" class="btn-dark" style="padding: 15px 30px; font-size: 1.1rem;">
-                    View Full Interactive Portfolio <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+            <div class="portfolio-cta">
+                <a href="./assets/docs/Mark_Oduor_Portfolio.pdf" target="_blank" class="btn-dark btn-large">
+                    View Full Interactive Portfolio <i class="fas fa-arrow-right icon-margin"></i>
                 </a>
             </div>
         </section>
@@ -357,25 +337,32 @@
             <div class="section-header">
                 <h2>Let's <span class="text-orange">Connect</span></h2>
             </div>
+            
             <div class="contact-container">
                 <div class="contact-info white-panel">
-                    <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem;">Get In Touch</h3>
-                    <p><i class="fas fa-map-marker-alt text-blue"></i> Nairobi, Kenya</p>
-                    <p><i class="fas fa-phone text-blue"></i> <a href="tel:+254718178521">0718178521</a></p>
-                    <p><i class="fas fa-envelope text-blue"></i> <a href="mailto:oduor.markochieng@gmail.com">oduor.markochieng@gmail.com</a></p>
+                    <h3 class="contact-title">Get In Touch</h3>
+                    <p class="contact-detail"><i class="fas fa-map-marker-alt text-blue icon-margin"></i> Nairobi, Kenya</p>
+                    <p class="contact-detail"><i class="fas fa-phone text-blue icon-margin"></i> <a href="tel:+254718178521">0718178521</a></p>
+                    <p class="contact-detail"><i class="fas fa-envelope text-blue icon-margin"></i> <a href="mailto:oduor.markochieng@gmail.com">oduor.markochieng@gmail.com</a></p>
                     
-                    <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(0,0,0,0.05);">
-                        <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">
-                            Are you looking for a dedicated <strong>Systems Architect, Social Media Manager, or ICT Professional</strong>? With a foundation in Computer Science and proven success in retail digital scaling, I am open to exciting new opportunities.
+                    <div class="contact-pitch">
+                        <p>
+                            Are you looking for a dedicated <strong>Web Manager, Social Media Manager, or ICT Professional</strong>? With a foundation in Computer Science and proven success in retail digital scaling, I am open to exciting new opportunities.
                         </p>
                     </div>
                 </div>
                 
                 <form action="https://formspree.io/f/xdabjbdb" method="POST" class="white-panel contact-form">
-                    <input type="text" name="name" placeholder="Your Full Name" required>
-                    <input type="email" name="_replyto" placeholder="Your Professional Email" required>
-                    <textarea name="message" placeholder="How can I add value to your team?" rows="6" required></textarea>
-                    <button type="submit" class="btn-dark" style="margin-bottom: 0; width: 100%;">Send Message</button>
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" placeholder="Your Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="_replyto" class="form-control" placeholder="Your Professional Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" class="form-control" placeholder="How can I add value to your team?" rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-dark btn-full">Send Message</button>
                 </form>
             </div>
         </section>
@@ -384,7 +371,7 @@
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-brand">
-                <h3><i class="fas fa-code text-blue"></i> Mark Ochieng Oduor</h3>
+                <h3><i class="fas fa-code text-blue icon-margin"></i> Mark Ochieng Oduor</h3>
                 <p>A passionate Computer Science student and digital professional specializing in Web Management, Social Media Strategy, and robust ICT support.</p>
             </div>
             <div class="footer-links">
@@ -398,8 +385,8 @@
             </div>
             <div class="footer-contact">
                 <h4>Direct Contact</h4>
-                <p><i class="fas fa-phone text-orange"></i> 0718178521</p>
-                <p><i class="fas fa-envelope text-blue"></i> oduor.markochieng@gmail.com</p>
+                <p><i class="fas fa-phone text-orange icon-margin"></i> 0718178521</p>
+                <p><i class="fas fa-envelope text-blue icon-margin"></i> oduor.markochieng@gmail.com</p>
             </div>
         </div>
         <div class="footer-bottom">
