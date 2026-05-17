@@ -69,13 +69,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* =========================================
-       2. TYPING EFFECT
+       2. TYPING EFFECT (Updated for your roles)
     ========================================= */
     const typedTextSpan = document.querySelector(".typing-text");
     const cursorSpan = document.querySelector(".cursor");
     
     if (typedTextSpan && cursorSpan) {
-        const textArray = ["Web Development.", "Data Integrations.", "System Architecture.", "Full-Stack Operations."];
+        const textArray = ["Web Management.", "Social Media Strategy.", "ICT Support.", "Digital Content Creation."];
         const typingDelay = 100, erasingDelay = 50, newTextDelay = 2000;
         let textArrayIndex = 0, charIndex = 0;
 
@@ -176,6 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (toast) {
         window.addEventListener('scroll', () => {
             if (toastTriggered) return;
+            // Triggers when user scrolls 65% down the page
             const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
             if (scrollPercentage > 65) {
                 toast.classList.add('active');
@@ -189,13 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* =========================================
-       7. DYNAMIC FOOTER YEAR
-    ========================================= */
-    const yearSpan = document.getElementById('current-year');
-    if (yearSpan) yearSpan.textContent = new Date().getFullYear();
-
-    /* =========================================
-       8. PORTFOLIO FILTERING
+       7. PORTFOLIO FILTERING
     ========================================= */
     const filterBtns = document.querySelectorAll('.filter-btn');
     const portfolioItems = document.querySelectorAll('.portfolio-item');
