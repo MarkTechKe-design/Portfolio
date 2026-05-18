@@ -374,7 +374,28 @@
             <a href="#contact" id="toast-contact-link" class="toast-btn btn-outline">Contact</a>
         </div>
     </div>
-
+<div id="doc-modal" class="doc-modal">
+        <div class="doc-modal-content">
+            <div class="doc-modal-header">
+                <h3 id="doc-modal-title">Document Viewer</h3>
+                <div class="doc-modal-actions">
+                    <a id="doc-download-btn" href="#" download class="btn-solid" style="padding: 10px 20px; font-size: 0.9rem; border-radius: 50px;">
+                        <i class="fas fa-download icon-margin"></i> Download
+                    </a>
+                    <button onclick="closeDocumentModal()" class="close-modal-btn"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            <div class="doc-modal-body">
+                <iframe id="doc-iframe" src="" frameborder="0"></iframe>
+                
+                <div class="mobile-pdf-fallback">
+                    <i class="fas fa-file-pdf" style="font-size: 4rem; color: var(--text-muted); margin-bottom: 20px;"></i>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">Your mobile browser prefers to download PDFs directly for the best reading experience.</p>
+                    <a id="doc-fallback-btn" href="#" download class="btn-dark">Download Document</a>
+                </div>
+            </div>
+        </div>
+    </div>
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-brand">
