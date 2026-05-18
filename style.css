@@ -381,3 +381,49 @@ nav {
     }
     .toast-popup.active { transform: translateY(0); }
 }
+/* =========================================
+   11. DOCUMENT VIEWER MODAL
+========================================= */
+.doc-modal {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(11, 15, 25, 0.85); backdrop-filter: blur(8px);
+    z-index: 10000; display: flex; justify-content: center; align-items: center;
+    opacity: 0; visibility: hidden; transition: var(--transition-smooth);
+}
+.doc-modal.active { opacity: 1; visibility: visible; }
+
+.doc-modal-content {
+    background: var(--bg-panel); width: 90%; max-width: 1000px; height: 85vh;
+    border-radius: var(--radius-xl); display: flex; flex-direction: column;
+    overflow: hidden; transform: translateY(30px); transition: var(--transition-bounce);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+}
+.doc-modal.active .doc-modal-content { transform: translateY(0); }
+
+.doc-modal-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 30px; border-bottom: 1px solid rgba(0,0,0,0.05); background: #fff;
+}
+.doc-modal-header h3 { font-size: 1.2rem; color: var(--text-dark); margin: 0; }
+.doc-modal-actions { display: flex; align-items: center; gap: 15px; }
+
+.close-modal-btn {
+    background: none; border: none; font-size: 1.8rem; color: var(--text-muted);
+    cursor: pointer; transition: 0.3s; padding: 0 5px;
+}
+.close-modal-btn:hover { color: var(--accent-red); transform: rotate(90deg); }
+
+.doc-modal-body { flex-grow: 1; width: 100%; position: relative; background: #f1f5f9; }
+.doc-modal-body iframe { width: 100%; height: 100%; }
+
+.mobile-pdf-fallback {
+    display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    text-align: center; width: 85%;
+}
+
+@media (max-width: 768px) {
+    .doc-modal-content { width: 95%; height: 80vh; }
+    /* Mobile browsers struggle with PDF iframes, so we hide it and show the fallback download */
+    .doc-modal-body iframe { display: none; } 
+    .mobile-pdf-fallback { display: block; }
+}
