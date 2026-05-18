@@ -220,5 +220,41 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
             });
         });
+
     }
+    /* =========================================
+       8. DOCUMENT VIEWER MODAL LOGIC
+    ========================================= */
+    // Expose functions to the global window so the HTML onclick attributes can find them
+    window.openDocumentModal = function(docUrl, title) {
+        const modal = document.getElementById('doc-modal');
+        const iframe = document.getElementById('doc-iframe');
+        const titleEl = document.getElementById('doc-modal-title');
+        const downloadBtn = document.getElementById('doc-download-btn');
+        const fallbackBtn = document.getElementById('doc-fallback-btn');
+
+        // Set the content dynamically
+        // Adding #toolbar=0 tells supporting browsers to hide their ugly default PDF toolbars
+        iframe.src = docUrl + "#toolbar=0"; 
+        titleEl.textContent = title;
+        
+        // Ensure both the header button and mobile fallback button point to the file
+        downloadBtn.href = docUrl;
+        fallbackBtn.href = docUrl;
+
+        // Show the modal and stop the background website from scrolling
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; 
+    };
+
+    window.closeDocumentModal = function() {
+        const modal = document.getElementById('doc-modal');
+        const iframe = document.getElementById('doc-iframe');
+        
+        modal.classList.remove('active');
+        document.body.style.overflow = ''; // Give scrolling back to the main website
+        
+        // Wait for the slide-down animation to finish, then clear the iframe to stop it loading in the background
+        setTimeout(() => { iframe.src = ""; }, 400);
+    };
 });
